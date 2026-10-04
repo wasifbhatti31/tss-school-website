@@ -831,10 +831,8 @@ button, input, select, textarea {
 
 .academics-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
-    max-width: 960px;
-    margin: 0 auto;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.25rem;
 }
 
 .academic-card {
