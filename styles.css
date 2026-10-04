@@ -1,54 +1,58 @@
 /* ==========================================================================
-   Taqwa Higher Secondary School - Modern Responsive Stylesheet
-   Color Palette: Deep Navy, Royal Blue Accent, Warm Gold, Soft Light Gray
+   Taqwa Higher Secondary School - Executive Modern Premium Theme
+   Color Palette: Deep Midnight Indigo (#0b1329), Sapphire Royal Blue (#1d4ed8),
+   Warm Regal Gold (#d97706 / #f59e0b), Crisp Slate Porcelain (#f8fafc)
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   1. CSS Custom Properties / Variables
+   1. CSS Variables & Theme Configuration
    -------------------------------------------------------------------------- */
 :root {
-    --primary-navy: #0f172a;
-    --navy-light: #1e293b;
-    --navy-dark: #090d16;
-    --royal-blue: #1d4ed8;
-    --royal-blue-hover: #1e40af;
-    --blue-soft: #eff6ff;
+    --primary-navy: #0b1329;
+    --navy-light: #162238;
+    --navy-dark: #050a17;
     
+    --royal-blue: #2563eb;
+    --royal-blue-hover: #1d4ed8;
+    --blue-glow: rgba(37, 99, 235, 0.2);
+    --blue-soft: #eff6ff;
+
     --gold-accent: #d97706;
     --gold-hover: #b45309;
-    --gold-light: #fef3c7;
+    --gold-light: #fffbeb;
+    --gold-border: #fef3c7;
     --gold-gradient: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
 
     --bg-light: #f8fafc;
     --card-bg: #ffffff;
     --text-primary: #0f172a;
-    --text-secondary: #475569;
+    --text-secondary: #334155;
     --text-muted: #64748b;
     --text-light: #f8fafc;
 
     --border-color: #e2e8f0;
-    --border-focus: #3b82f6;
+    --border-hover: #cbd5e1;
 
     --font-heading: 'Plus Jakarta Sans', sans-serif;
     --font-serif: 'Playfair Display', Georgia, serif;
     --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
 
-    --shadow-sm: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.1);
-    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -1px rgba(0,0,0,0.04);
-    --shadow-lg: 0 10px 25px -5px rgba(15,23,42,0.12), 0 8px 10px -6px rgba(15,23,42,0.07);
-    --shadow-xl: 0 20px 30px -10px rgba(15,23,42,0.18);
+    --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.04);
+    --shadow-md: 0 6px 16px -2px rgba(15, 23, 42, 0.08), 0 2px 4px -1px rgba(15, 23, 42, 0.04);
+    --shadow-lg: 0 16px 32px -6px rgba(15, 23, 42, 0.12), 0 8px 16px -4px rgba(15, 23, 42, 0.06);
+    --shadow-xl: 0 25px 50px -12px rgba(15, 23, 42, 0.22);
 
-    --radius-sm: 6px;
-    --radius-md: 12px;
-    --radius-lg: 20px;
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 24px;
     --radius-full: 9999px;
 
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --header-height: 80px;
+    --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    --header-height: 84px;
 }
 
 /* --------------------------------------------------------------------------
-   2. Reset & General Setup
+   2. Base Reset & Typography
    -------------------------------------------------------------------------- */
 *, *::before, *::after {
     box-sizing: border-box;
@@ -65,7 +69,7 @@ body {
     font-family: var(--font-body);
     background-color: var(--bg-light);
     color: var(--text-primary);
-    line-height: 1.6;
+    line-height: 1.65;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
 }
@@ -93,66 +97,69 @@ button, input, select, textarea {
 
 .container {
     width: 100%;
-    max-width: 1240px;
+    max-width: 1260px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
 }
 
 .text-center { text-align: center; }
 
 /* --------------------------------------------------------------------------
-   3. Buttons & Badges
+   3. Premium Buttons & Badges
    -------------------------------------------------------------------------- */
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    padding: 0.8rem 1.6rem;
-    font-weight: 600;
+    gap: 0.6rem;
+    padding: 0.85rem 1.8rem;
+    font-weight: 700;
     font-size: 0.95rem;
     border-radius: var(--radius-full);
     border: 2px solid transparent;
     cursor: pointer;
     transition: var(--transition);
     white-space: nowrap;
+    letter-spacing: -0.01em;
 }
 
 .btn-primary {
     background-color: var(--royal-blue);
     color: #ffffff;
-    box-shadow: 0 4px 14px rgba(29, 78, 216, 0.3);
+    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.35);
 }
 
 .btn-primary:hover {
     background-color: var(--royal-blue-hover);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(29, 78, 216, 0.4);
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.45);
 }
 
 .btn-gold {
     background: var(--gold-gradient);
     color: #ffffff;
-    box-shadow: 0 4px 14px rgba(217, 119, 6, 0.35);
+    box-shadow: 0 4px 18px rgba(217, 119, 6, 0.4);
 }
 
 .btn-gold:hover {
     background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(217, 119, 6, 0.45);
+    box-shadow: 0 8px 24px rgba(217, 119, 6, 0.5);
 }
 
 .btn-outline-light {
-    background: transparent;
+    background: rgba(255, 255, 255, 0.08);
     color: #ffffff;
-    border-color: rgba(255, 255, 255, 0.4);
+    border-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(8px);
 }
 
 .btn-outline-light:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.2);
     border-color: #ffffff;
+    transform: translateY(-2px);
 }
 
 .btn-outline-dark {
@@ -163,25 +170,24 @@ button, input, select, textarea {
 
 .btn-outline-dark:hover {
     background: #f1f5f9;
+    border-color: var(--border-hover);
 }
 
-.btn-full {
-    width: 100%;
-}
+.btn-full { width: 100%; }
 
 .btn-lg {
-    padding: 1rem 2.2rem;
+    padding: 1.05rem 2.4rem;
     font-size: 1.05rem;
 }
 
 /* --------------------------------------------------------------------------
-   4. Top Bar & Announcement
+   4. Executive Top Bar
    -------------------------------------------------------------------------- */
 .top-bar {
-    background-color: var(--navy-dark);
-    color: rgba(255, 255, 255, 0.85);
-    font-size: 0.825rem;
-    padding: 0.5rem 0;
+    background: var(--navy-dark);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.85rem;
+    padding: 0.6rem 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -193,43 +199,46 @@ button, input, select, textarea {
 
 .top-info {
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
     align-items: center;
 }
 
 .top-info span {
     display: flex;
     align-items: center;
-    gap: 0.4rem;
+    gap: 0.5rem;
+    font-weight: 500;
 }
 
 .top-announcement {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.6rem;
+    font-weight: 500;
 }
 
 .top-announcement .badge {
-    background-color: var(--gold-accent);
+    background: var(--gold-gradient);
     color: #ffffff;
-    padding: 0.15rem 0.5rem;
+    padding: 0.2rem 0.65rem;
     border-radius: var(--radius-sm);
-    font-size: 0.7rem;
-    font-weight: 700;
+    font-size: 0.72rem;
+    font-weight: 800;
     text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 @media (max-width: 768px) {
     .desktop-only { display: none; }
     .top-bar-content {
         flex-direction: column;
-        gap: 0.2rem;
+        gap: 0.3rem;
         text-align: center;
     }
 }
 
 /* --------------------------------------------------------------------------
-   5. Sticky Header & Navigation Bar
+   5. Glassmorphism Navigation Bar
    -------------------------------------------------------------------------- */
 .site-header {
     position: sticky;
@@ -237,16 +246,16 @@ button, input, select, textarea {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background-color: rgba(15, 23, 42, 0.95);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(11, 19, 41, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     transition: var(--transition);
 }
 
 .site-header.scrolled {
-    background-color: rgba(15, 23, 42, 0.98);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    background: rgba(11, 19, 41, 0.98);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-container {
@@ -259,19 +268,19 @@ button, input, select, textarea {
 .logo {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.85rem;
 }
 
 .logo-icon {
-    width: 44px;
-    height: 44px;
+    width: 48px;
+    height: 48px;
     background: var(--gold-gradient);
     color: #ffffff;
     border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 10px rgba(217, 119, 6, 0.3);
+    box-shadow: 0 6px 16px rgba(217, 119, 6, 0.35);
 }
 
 .logo-text {
@@ -281,7 +290,7 @@ button, input, select, textarea {
 
 .brand-name {
     font-family: var(--font-heading);
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     font-weight: 800;
     color: #ffffff;
     line-height: 1.1;
@@ -289,11 +298,12 @@ button, input, select, textarea {
 }
 
 .brand-sub {
-    font-size: 0.75rem;
+    font-size: 0.725rem;
     color: var(--gold-accent);
-    font-weight: 600;
-    letter-spacing: 0.15em;
+    font-weight: 700;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
+    margin-top: 2px;
 }
 
 /* Desktop Navigation Menu */
@@ -304,15 +314,15 @@ button, input, select, textarea {
 
 .nav-menu {
     display: flex;
-    gap: 2rem;
+    gap: 2.25rem;
 }
 
 .nav-link {
-    color: rgba(255, 255, 255, 0.85);
-    font-weight: 500;
-    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.88);
+    font-weight: 600;
+    font-size: 0.98rem;
     position: relative;
-    padding: 0.4rem 0;
+    padding: 0.5rem 0;
 }
 
 .nav-link:hover, .nav-link.active {
@@ -325,10 +335,10 @@ button, input, select, textarea {
     bottom: 0;
     left: 0;
     width: 0%;
-    height: 2px;
-    background-color: var(--gold-accent);
+    height: 3px;
+    background: var(--gold-gradient);
     transition: var(--transition);
-    border-radius: 2px;
+    border-radius: 3px;
 }
 
 .nav-link:hover::after, .nav-link.active::after {
@@ -347,7 +357,7 @@ button, input, select, textarea {
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
-    height: 21px;
+    height: 22px;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -363,17 +373,14 @@ button, input, select, textarea {
     transition: var(--transition);
 }
 
-/* Hamburger Active / Open State */
 .hamburger-btn.active .bar:nth-child(1) {
     transform: translateY(9px) rotate(45deg);
 }
-
 .hamburger-btn.active .bar:nth-child(2) {
     opacity: 0;
 }
-
 .hamburger-btn.active .bar:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
+    transform: translateY(-10px) rotate(-45deg);
 }
 
 /* Mobile Nav Drawer */
@@ -383,8 +390,8 @@ button, input, select, textarea {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(9, 13, 22, 0.7);
-    backdrop-filter: blur(4px);
+    background: rgba(5, 10, 23, 0.8);
+    backdrop-filter: blur(6px);
     z-index: 1001;
     opacity: 0;
     visibility: hidden;
@@ -400,16 +407,16 @@ button, input, select, textarea {
     position: fixed;
     top: 0;
     right: -320px;
-    width: 300px;
+    width: 310px;
     height: 100vh;
-    background-color: var(--primary-navy);
+    background: var(--primary-navy);
     z-index: 1002;
-    padding: 2rem 1.5rem;
+    padding: 2.2rem 1.75rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: -5px 0 25px rgba(0,0,0,0.5);
-    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -8px 0 30px rgba(0,0,0,0.6);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .mobile-nav-drawer.active {
@@ -420,15 +427,15 @@ button, input, select, textarea {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    padding-bottom: 1.25rem;
 }
 
 .close-btn {
     background: transparent;
     border: none;
     color: #ffffff;
-    font-size: 2rem;
+    font-size: 2.2rem;
     cursor: pointer;
     line-height: 1;
 }
@@ -445,8 +452,8 @@ button, input, select, textarea {
     font-size: 1.15rem;
     font-weight: 600;
     display: block;
-    padding: 0.5rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .mobile-link:hover {
@@ -461,8 +468,8 @@ button, input, select, textarea {
 }
 
 .mobile-contact-info {
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 @media (max-width: 992px) {
@@ -471,31 +478,28 @@ button, input, select, textarea {
 }
 
 /* --------------------------------------------------------------------------
-   6. Hero Section
+   6. Executive Hero Section
    -------------------------------------------------------------------------- */
 .hero {
     position: relative;
     background: var(--primary-navy);
     background-image: 
-        radial-gradient(circle at 80% 20%, rgba(29, 78, 216, 0.25) 0%, transparent 40%),
-        radial-gradient(circle at 20% 80%, rgba(217, 119, 6, 0.15) 0%, transparent 40%),
-        linear-gradient(180deg, rgba(15, 23, 42, 0.8) 0%, rgba(15, 23, 42, 0.95) 100%);
+        radial-gradient(circle at 85% 15%, rgba(37, 99, 235, 0.3) 0%, transparent 45%),
+        radial-gradient(circle at 15% 85%, rgba(217, 119, 6, 0.2) 0%, transparent 45%),
+        linear-gradient(180deg, rgba(11, 19, 41, 0.85) 0%, rgba(5, 10, 23, 0.98) 100%);
     color: #ffffff;
-    padding-top: 5rem;
-    padding-bottom: 8rem;
+    padding-top: 6rem;
+    padding-bottom: 9rem;
     overflow: hidden;
 }
 
 .hero::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-    background-size: 24px 24px;
-    opacity: 0.6;
+    inset: 0;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+    background-size: 28px 28px;
+    opacity: 0.5;
 }
 
 .hero-bg-overlay {
@@ -510,7 +514,7 @@ button, input, select, textarea {
 }
 
 .hero-content {
-    max-width: 800px;
+    max-width: 860px;
     margin: 0 auto;
     text-align: center;
 }
@@ -518,46 +522,47 @@ button, input, select, textarea {
 .hero-badge {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 0.4rem 1.2rem;
+    gap: 0.6rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 0.5rem 1.4rem;
     border-radius: var(--radius-full);
-    font-size: 0.875rem;
-    font-weight: 600;
+    font-size: 0.9rem;
+    font-weight: 700;
     color: var(--gold-light);
-    margin-bottom: 1.5rem;
-    backdrop-filter: blur(8px);
+    margin-bottom: 1.75rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 }
 
 .hero-badge .star-icon {
-    color: var(--gold-accent);
+    color: #fbbf24;
 }
 
 .hero-title {
     font-family: var(--font-heading);
-    font-size: clamp(2.3rem, 5vw, 4rem);
+    font-size: clamp(2.5rem, 5.5vw, 4.25rem);
     font-weight: 800;
-    line-height: 1.15;
+    line-height: 1.12;
     letter-spacing: -0.03em;
     margin-bottom: 1.5rem;
-    background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .hero-subtitle {
-    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
     color: #94a3b8;
-    margin-bottom: 2.5rem;
-    max-width: 680px;
+    margin-bottom: 2.75rem;
+    max-width: 720px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .hero-cta-group {
     display: flex;
-    gap: 1rem;
+    gap: 1.25rem;
     justify-content: center;
     flex-wrap: wrap;
 }
@@ -566,7 +571,7 @@ button, input, select, textarea {
 .hero-stats {
     position: relative;
     z-index: 3;
-    margin-top: -3.5rem;
+    margin-top: -4rem;
 }
 
 .stats-grid {
@@ -575,7 +580,7 @@ button, input, select, textarea {
     gap: 1.5rem;
     background: #ffffff;
     border-radius: var(--radius-lg);
-    padding: 2rem;
+    padding: 2.25rem 2rem;
     box-shadow: var(--shadow-xl);
     border: 1px solid var(--border-color);
 }
@@ -593,16 +598,17 @@ button, input, select, textarea {
 .stat-number {
     display: block;
     font-family: var(--font-heading);
-    font-size: 2.25rem;
+    font-size: 2.4rem;
     font-weight: 800;
     color: var(--primary-navy);
-    line-height: 1.2;
+    line-height: 1.15;
 }
 
 .stat-label {
-    font-size: 0.875rem;
+    font-size: 0.9rem;
     color: var(--text-muted);
     font-weight: 600;
+    margin-top: 0.2rem;
 }
 
 @media (max-width: 992px) {
@@ -628,38 +634,41 @@ button, input, select, textarea {
 }
 
 /* --------------------------------------------------------------------------
-   7. General Section Styles
+   7. General Section Layouts
    -------------------------------------------------------------------------- */
 .section {
-    padding: 6rem 0;
+    padding: 6.5rem 0;
 }
 
 .section-header {
-    max-width: 700px;
-    margin: 0 auto 3.5rem auto;
+    max-width: 740px;
+    margin: 0 auto 3.75rem auto;
 }
 
 .section-tag {
     display: inline-block;
     color: var(--royal-blue);
-    font-size: 0.85rem;
-    font-weight: 700;
+    background: var(--blue-soft);
+    padding: 0.35rem 1rem;
+    border-radius: var(--radius-full);
+    font-size: 0.825rem;
+    font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
 }
 
 .section-title {
     font-family: var(--font-heading);
-    font-size: clamp(1.8rem, 3.5vw, 2.75rem);
+    font-size: clamp(2rem, 3.8vw, 2.85rem);
     font-weight: 800;
     color: var(--primary-navy);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
     margin-bottom: 1rem;
 }
 
 .section-description {
-    font-size: 1.1rem;
+    font-size: 1.125rem;
     color: var(--text-secondary);
 }
 
@@ -673,22 +682,22 @@ button, input, select, textarea {
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 4.5rem;
     align-items: center;
 }
 
 .about-content h3 {
-    font-size: 1.75rem;
-    font-weight: 700;
+    font-size: 1.85rem;
+    font-weight: 800;
     color: var(--primary-navy);
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
 }
 
 .lead-text {
-    font-size: 1.15rem;
-    font-weight: 500;
+    font-size: 1.18rem;
+    font-weight: 600;
     color: var(--text-primary);
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.4rem;
     line-height: 1.6;
 }
 
@@ -700,20 +709,20 @@ button, input, select, textarea {
 .mission-highlights {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    margin: 2rem 0;
+    gap: 1.25rem;
+    margin: 2.2rem 0;
 }
 
 .highlight-item {
     display: flex;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 1.1rem;
 }
 
 .icon-box {
-    width: 32px;
-    height: 32px;
-    background-color: var(--blue-soft);
+    width: 36px;
+    height: 36px;
+    background: var(--blue-soft);
     color: var(--royal-blue);
     border-radius: var(--radius-sm);
     display: flex;
@@ -721,32 +730,33 @@ button, input, select, textarea {
     justify-content: center;
     font-weight: bold;
     flex-shrink: 0;
-    margin-top: 0.2rem;
+    margin-top: 0.15rem;
 }
 
 .highlight-item h4 {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: var(--primary-navy);
 }
 
 .highlight-item p {
-    font-size: 0.9rem;
+    font-size: 0.925rem;
     margin-bottom: 0;
 }
 
 .principal-quote {
-    background-color: var(--bg-light);
-    border-left: 4px solid var(--gold-accent);
-    padding: 1.5rem;
+    background: var(--bg-light);
+    border-left: 5px solid var(--gold-accent);
+    padding: 1.75rem;
     border-radius: 0 var(--radius-md) var(--radius-md) 0;
-    margin-top: 2rem;
+    margin-top: 2.2rem;
+    box-shadow: var(--shadow-sm);
 }
 
 .quote-text {
     font-family: var(--font-serif);
     font-style: italic;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     color: var(--primary-navy);
     margin-bottom: 0.8rem !important;
 }
@@ -758,11 +768,11 @@ button, input, select, textarea {
 
 .principal-author strong {
     color: var(--primary-navy);
-    font-size: 0.95rem;
+    font-size: 1rem;
 }
 
 .principal-author span {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: var(--text-muted);
 }
 
@@ -773,42 +783,42 @@ button, input, select, textarea {
 }
 
 .value-card {
-    background-color: var(--bg-light);
-    padding: 2rem 1.5rem;
+    background: var(--bg-light);
+    padding: 2.25rem 1.75rem;
     border-radius: var(--radius-md);
     border: 1px solid var(--border-color);
     transition: var(--transition);
 }
 
 .value-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
     box-shadow: var(--shadow-md);
     border-color: var(--royal-blue);
     background-color: #ffffff;
 }
 
 .value-icon {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: 2.2rem;
+    margin-bottom: 1.1rem;
 }
 
 .value-card h4 {
-    font-size: 1.1rem;
-    font-weight: 700;
+    font-size: 1.15rem;
+    font-weight: 800;
     color: var(--primary-navy);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
 }
 
 .value-card p {
-    font-size: 0.875rem;
+    font-size: 0.9rem;
     color: var(--text-secondary);
-    line-height: 1.5;
+    line-height: 1.55;
 }
 
 @media (max-width: 992px) {
     .about-grid {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 3.5rem;
     }
 }
 
@@ -822,13 +832,13 @@ button, input, select, textarea {
 .academics-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    gap: 2.25rem;
 }
 
 .academic-card {
     background: #ffffff;
     border-radius: var(--radius-lg);
-    padding: 2.5rem 2rem;
+    padding: 2.75rem 2.25rem;
     border: 1px solid var(--border-color);
     box-shadow: var(--shadow-sm);
     position: relative;
@@ -838,9 +848,9 @@ button, input, select, textarea {
 }
 
 .academic-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-8px);
     box-shadow: var(--shadow-lg);
-    border-color: rgba(29, 78, 216, 0.3);
+    border-color: rgba(37, 99, 235, 0.4);
 }
 
 .academic-card.featured {
@@ -850,13 +860,13 @@ button, input, select, textarea {
 
 .card-badge {
     position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
+    top: 1.75rem;
+    right: 1.75rem;
     background: var(--blue-soft);
     color: var(--royal-blue);
-    font-size: 0.75rem;
-    font-weight: 700;
-    padding: 0.25rem 0.75rem;
+    font-size: 0.78rem;
+    font-weight: 800;
+    padding: 0.3rem 0.85rem;
     border-radius: var(--radius-full);
 }
 
@@ -866,43 +876,43 @@ button, input, select, textarea {
 }
 
 .academic-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1.2rem;
+    font-size: 2.75rem;
+    margin-bottom: 1.25rem;
 }
 
 .academic-card h3 {
-    font-size: 1.35rem;
-    font-weight: 700;
+    font-size: 1.4rem;
+    font-weight: 800;
     color: var(--primary-navy);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.85rem;
 }
 
 .academic-card p {
     font-size: 0.95rem;
     color: var(--text-secondary);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.75rem;
 }
 
 .program-features {
     margin-top: auto;
     border-top: 1px solid #f1f5f9;
-    padding-top: 1.2rem;
+    padding-top: 1.4rem;
 }
 
 .program-features li {
-    font-size: 0.875rem;
+    font-size: 0.9rem;
     color: var(--text-primary);
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.6rem;
 }
 
 .program-features li::before {
     content: '•';
     color: var(--gold-accent);
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 }
 
 @media (max-width: 992px) {
@@ -912,7 +922,7 @@ button, input, select, textarea {
 }
 
 /* --------------------------------------------------------------------------
-   10. Facilities Section (Grid Cards with Hover Effects)
+   10. Premium Facilities Section Grid & Cards
    -------------------------------------------------------------------------- */
 .facilities-section {
     background-color: #ffffff;
@@ -921,7 +931,7 @@ button, input, select, textarea {
 .facilities-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1.75rem;
+    gap: 2rem;
 }
 
 .facility-card {
@@ -935,32 +945,30 @@ button, input, select, textarea {
     flex-direction: column;
 }
 
-/* Hover Effect as required */
 .facility-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-10px);
     box-shadow: var(--shadow-xl);
     border-color: var(--royal-blue);
 }
 
 .facility-image-wrapper {
     position: relative;
-    height: 180px;
+    height: 190px;
     overflow: hidden;
 }
 
 .facility-img-bg {
     width: 100%;
     height: 100%;
-    transition: transform 0.5s ease;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .facility-card:hover .facility-img-bg {
-    transform: scale(1.08);
+    transform: scale(1.1);
 }
 
-/* High quality dynamic CSS backgrounds for illustration */
 .img-teachers {
-    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    background: linear-gradient(135deg, #0b1329 0%, #1d4ed8 100%);
     position: relative;
 }
 .img-teachers::after {
@@ -970,12 +978,12 @@ button, input, select, textarea {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 3rem;
-    background: rgba(15, 23, 42, 0.4);
+    font-size: 3.2rem;
+    background: rgba(11, 19, 41, 0.45);
 }
 
 .img-labs {
-    background: linear-gradient(135deg, #065f46 0%, #10b981 100%);
+    background: linear-gradient(135deg, #064e3b 0%, #059669 100%);
     position: relative;
 }
 .img-labs::after {
@@ -985,8 +993,8 @@ button, input, select, textarea {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 3rem;
-    background: rgba(15, 23, 42, 0.4);
+    font-size: 3.2rem;
+    background: rgba(11, 19, 41, 0.45);
 }
 
 .img-library {
@@ -1000,84 +1008,85 @@ button, input, select, textarea {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 3rem;
-    background: rgba(15, 23, 42, 0.4);
+    font-size: 3.2rem;
+    background: rgba(11, 19, 41, 0.45);
 }
 
 .img-sports {
-    background: linear-gradient(135deg, #831843 0%, #ec4899 100%);
+    background: linear-gradient(135deg, #831843 0%, #db2777 100%);
     position: relative;
 }
 .img-sports::after {
-    content: '⚽ 🏀 🏊‍♂️';
+    content: '⚽ 🏀 🎾';
     position: absolute;
     inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 3rem;
-    background: rgba(15, 23, 42, 0.4);
+    font-size: 3.2rem;
+    background: rgba(11, 19, 41, 0.45);
 }
 
 .facility-icon-badge {
     position: absolute;
-    bottom: -18px;
-    left: 1.25rem;
-    width: 44px;
-    height: 44px;
+    bottom: -20px;
+    left: 1.5rem;
+    width: 46px;
+    height: 46px;
     background-color: #ffffff;
     border-radius: var(--radius-sm);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     box-shadow: var(--shadow-md);
     z-index: 2;
+    border: 1px solid var(--border-color);
 }
 
 .facility-content {
-    padding: 2rem 1.25rem 1.5rem 1.25rem;
+    padding: 2.25rem 1.5rem 1.75rem 1.5rem;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
 }
 
 .facility-category {
-    font-size: 0.75rem;
-    font-weight: 700;
+    font-size: 0.78rem;
+    font-weight: 800;
     color: var(--royal-blue);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 0.3rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.4rem;
 }
 
 .facility-content h3 {
-    font-size: 1.2rem;
-    font-weight: 700;
+    font-size: 1.25rem;
+    font-weight: 800;
     color: var(--primary-navy);
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.65rem;
 }
 
 .facility-content p {
-    font-size: 0.9rem;
+    font-size: 0.925rem;
     color: var(--text-secondary);
-    line-height: 1.5;
-    margin-bottom: 1.2rem;
+    line-height: 1.55;
+    margin-bottom: 1.4rem;
 }
 
 .facility-link {
     margin-top: auto;
-    font-size: 0.875rem;
-    font-weight: 700;
+    font-size: 0.9rem;
+    font-weight: 800;
     color: var(--royal-blue);
     display: inline-flex;
     align-items: center;
-    gap: 0.3rem;
+    gap: 0.35rem;
 }
 
 .facility-card:hover .facility-link {
     color: var(--royal-blue-hover);
-    gap: 0.6rem;
+    gap: 0.7rem;
 }
 
 @media (max-width: 1100px) {
@@ -1093,22 +1102,22 @@ button, input, select, textarea {
 }
 
 /* --------------------------------------------------------------------------
-   11. CTA Banner
+   11. Executive CTA Banner
    -------------------------------------------------------------------------- */
 .cta-banner-section {
     background-color: #ffffff;
-    padding-bottom: 6rem;
+    padding-bottom: 6.5rem;
 }
 
 .cta-banner-card {
     background: linear-gradient(135deg, var(--primary-navy) 0%, #1e3a8a 100%);
     border-radius: var(--radius-lg);
-    padding: 3.5rem 3rem;
+    padding: 4rem 3.5rem;
     color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 2rem;
+    gap: 2.5rem;
     box-shadow: var(--shadow-xl);
     position: relative;
     overflow: hidden;
@@ -1117,30 +1126,30 @@ button, input, select, textarea {
 .cta-banner-card::after {
     content: '';
     position: absolute;
-    right: -50px;
-    bottom: -50px;
-    width: 250px;
-    height: 250px;
-    background: rgba(255, 255, 255, 0.05);
+    right: -60px;
+    bottom: -60px;
+    width: 280px;
+    height: 280px;
+    background: rgba(255, 255, 255, 0.06);
     border-radius: 50%;
 }
 
 .cta-banner-content h2 {
     font-family: var(--font-heading);
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 800;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.85rem;
 }
 
 .cta-banner-content p {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     color: #cbd5e1;
-    max-width: 600px;
+    max-width: 640px;
 }
 
 .cta-banner-buttons {
     display: flex;
-    gap: 1rem;
+    gap: 1.2rem;
     flex-shrink: 0;
     z-index: 2;
 }
@@ -1149,7 +1158,7 @@ button, input, select, textarea {
     .cta-banner-card {
         flex-direction: column;
         text-align: center;
-        padding: 2.5rem 2rem;
+        padding: 3rem 2rem;
     }
     .cta-banner-buttons {
         flex-wrap: wrap;
@@ -1158,7 +1167,7 @@ button, input, select, textarea {
 }
 
 /* --------------------------------------------------------------------------
-   12. Contact Section & Form
+   12. Contact Section & Form UI
    -------------------------------------------------------------------------- */
 .contact-section {
     background-color: var(--bg-light);
@@ -1167,135 +1176,135 @@ button, input, select, textarea {
 .contact-grid {
     display: grid;
     grid-template-columns: 5fr 7fr;
-    gap: 3rem;
+    gap: 3.5rem;
 }
 
 .contact-info-card {
     background: var(--primary-navy);
     color: #ffffff;
     border-radius: var(--radius-lg);
-    padding: 2.5rem;
+    padding: 3rem;
     display: flex;
     flex-direction: column;
     box-shadow: var(--shadow-lg);
 }
 
 .contact-info-card h3 {
-    font-size: 1.6rem;
-    font-weight: 700;
-    margin-bottom: 0.75rem;
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: 0.85rem;
 }
 
 .contact-info-card p {
     color: #94a3b8;
-    margin-bottom: 2rem;
-    font-size: 0.95rem;
+    margin-bottom: 2.2rem;
+    font-size: 0.98rem;
 }
 
 .info-list {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
+    gap: 1.6rem;
+    margin-bottom: 2.2rem;
 }
 
 .info-item {
     display: flex;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 1.1rem;
 }
 
 .info-icon {
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.1);
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.12);
     border-radius: var(--radius-sm);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     flex-shrink: 0;
 }
 
 .info-item strong {
     display: block;
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: #ffffff;
 }
 
 .info-item p {
     margin-bottom: 0;
     color: #cbd5e1;
-    font-size: 0.875rem;
+    font-size: 0.925rem;
 }
 
 .map-preview-card {
     margin-top: auto;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: var(--radius-md);
-    padding: 1.5rem;
+    padding: 1.75rem;
     text-align: center;
 }
 
 .map-placeholder {
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
-    font-size: 0.9rem;
+    gap: 0.5rem;
+    font-size: 0.95rem;
 }
 
 .map-placeholder .pin {
-    font-weight: 700;
-    color: var(--gold-accent);
+    font-weight: 800;
+    color: #fbbf24;
 }
 
-/* Contact Form UI */
+/* Contact Form */
 .contact-form-wrapper {
     background-color: #ffffff;
     border-radius: var(--radius-lg);
-    padding: 2.5rem;
+    padding: 3rem;
     border: 1px solid var(--border-color);
     box-shadow: var(--shadow-md);
 }
 
 .contact-form h3 {
-    font-size: 1.6rem;
-    font-weight: 700;
+    font-size: 1.75rem;
+    font-weight: 800;
     color: var(--primary-navy);
     margin-bottom: 0.5rem;
 }
 
 .form-subtext {
-    font-size: 0.95rem;
+    font-size: 0.98rem;
     color: var(--text-muted);
-    margin-bottom: 2rem;
+    margin-bottom: 2.2rem;
 }
 
 .form-group-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1.25rem;
+    gap: 1.5rem;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.4rem;
     position: relative;
 }
 
 .form-group label {
-    font-size: 0.875rem;
-    font-weight: 600;
+    font-size: 0.9rem;
+    font-weight: 700;
     color: var(--text-primary);
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.45rem;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
-    padding: 0.8rem 1rem;
+    padding: 0.9rem 1.1rem;
     border-radius: var(--radius-sm);
     border: 1px solid var(--border-color);
     background-color: #f8fafc;
@@ -1309,13 +1318,13 @@ button, input, select, textarea {
 .form-group textarea:focus {
     border-color: var(--royal-blue);
     background-color: #ffffff;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    box-shadow: 0 0 0 4px var(--blue-glow);
 }
 
 .error-msg {
     color: #ef4444;
-    font-size: 0.75rem;
-    margin-top: 0.3rem;
+    font-size: 0.78rem;
+    margin-top: 0.35rem;
     display: none;
 }
 
@@ -1329,11 +1338,11 @@ button, input, select, textarea {
 }
 
 .form-alert {
-    margin-top: 1rem;
-    padding: 1rem;
+    margin-top: 1.25rem;
+    padding: 1.1rem;
     border-radius: var(--radius-sm);
-    font-size: 0.9rem;
-    font-weight: 600;
+    font-size: 0.95rem;
+    font-weight: 700;
     display: none;
 }
 
@@ -1359,98 +1368,100 @@ button, input, select, textarea {
 .site-footer {
     background-color: var(--navy-dark);
     color: #cbd5e1;
-    padding-top: 5rem;
-    padding-bottom: 2rem;
+    padding-top: 5.5rem;
+    padding-bottom: 2.25rem;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .footer-grid {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1.5fr;
-    gap: 3rem;
-    padding-bottom: 3.5rem;
+    gap: 3.5rem;
+    padding-bottom: 4rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .footer-logo {
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.4rem;
 }
 
 .footer-about {
-    font-size: 0.9rem;
-    line-height: 1.6;
+    font-size: 0.925rem;
+    line-height: 1.65;
     color: #94a3b8;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.75rem;
 }
 
 .social-links {
     display: flex;
-    gap: 0.75rem;
+    gap: 0.85rem;
 }
 
 .social-icon {
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
     background: rgba(255, 255, 255, 0.08);
     color: #ffffff;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.85rem;
-    font-weight: 700;
+    font-size: 0.9rem;
+    font-weight: 800;
 }
 
 .social-icon:hover {
-    background: var(--gold-accent);
+    background: var(--gold-gradient);
     transform: translateY(-3px);
 }
 
 .footer-col h4 {
     color: #ffffff;
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
+    font-size: 1.15rem;
+    font-weight: 800;
+    margin-bottom: 1.6rem;
     position: relative;
 }
 
 .footer-col h4::after {
     content: '';
     display: block;
-    width: 24px;
-    height: 2px;
-    background-color: var(--gold-accent);
-    margin-top: 0.4rem;
+    width: 28px;
+    height: 3px;
+    background: var(--gold-gradient);
+    margin-top: 0.5rem;
+    border-radius: 2px;
 }
 
 .footer-links {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.85rem;
 }
 
 .footer-links a {
     color: #94a3b8;
-    font-size: 0.9rem;
+    font-size: 0.925rem;
+    font-weight: 500;
 }
 
 .footer-links a:hover {
     color: #ffffff;
-    padding-left: 0.4rem;
+    padding-left: 0.45rem;
 }
 
 .newsletter-form {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
-    margin-top: 1rem;
+    gap: 0.85rem;
+    margin-top: 1.2rem;
 }
 
 .newsletter-form input {
-    padding: 0.75rem 1rem;
+    padding: 0.85rem 1.1rem;
     border-radius: var(--radius-sm);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.06);
     color: #ffffff;
     outline: none;
 }
@@ -1460,8 +1471,8 @@ button, input, select, textarea {
 }
 
 .newsletter-alert {
-    margin-top: 0.5rem;
-    font-size: 0.8rem;
+    margin-top: 0.6rem;
+    font-size: 0.85rem;
     display: none;
 }
 
@@ -1474,14 +1485,14 @@ button, input, select, textarea {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 2rem;
-    font-size: 0.85rem;
+    padding-top: 2.25rem;
+    font-size: 0.875rem;
     color: #64748b;
 }
 
 .footer-legal {
     display: flex;
-    gap: 0.75rem;
+    gap: 0.85rem;
     align-items: center;
 }
 
@@ -1501,24 +1512,24 @@ button, input, select, textarea {
     }
     .footer-bottom {
         flex-direction: column;
-        gap: 1rem;
+        gap: 1.2rem;
         text-align: center;
     }
 }
 
 /* --------------------------------------------------------------------------
-   14. Admission Modal Dialog
+   14. Executive Admission Modal Dialog
    -------------------------------------------------------------------------- */
 .modal-backdrop {
     position: fixed;
     inset: 0;
-    background: rgba(9, 13, 22, 0.75);
-    backdrop-filter: blur(6px);
+    background: rgba(5, 10, 23, 0.82);
+    backdrop-filter: blur(8px);
     z-index: 2000;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1.5rem;
+    padding: 1.75rem;
     opacity: 0;
     visibility: hidden;
     transition: var(--transition);
@@ -1532,13 +1543,13 @@ button, input, select, textarea {
 .modal-card {
     background-color: #ffffff;
     border-radius: var(--radius-lg);
-    max-width: 650px;
+    max-width: 680px;
     width: 100%;
     max-height: 90vh;
     overflow-y: auto;
     box-shadow: var(--shadow-xl);
-    transform: scale(0.95);
-    transition: transform 0.3s ease;
+    transform: scale(0.94);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .modal-backdrop.active .modal-card {
@@ -1549,36 +1560,36 @@ button, input, select, textarea {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 2rem;
+    padding: 1.75rem 2.25rem;
     border-bottom: 1px solid var(--border-color);
-    background-color: var(--primary-navy);
+    background: var(--primary-navy);
     color: #ffffff;
     border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 }
 
 .modal-header h3 {
-    font-size: 1.35rem;
-    font-weight: 700;
+    font-size: 1.45rem;
+    font-weight: 800;
 }
 
 .modal-close-btn {
     background: transparent;
     border: none;
     color: #ffffff;
-    font-size: 1.8rem;
+    font-size: 2rem;
     cursor: pointer;
     line-height: 1;
 }
 
 .modal-body {
-    padding: 2rem;
+    padding: 2.25rem;
 }
 
 .modal-footer {
     display: flex;
     justify-content: flex-end;
-    gap: 1rem;
-    margin-top: 1.5rem;
-    padding-top: 1rem;
+    gap: 1.2rem;
+    margin-top: 1.75rem;
+    padding-top: 1.25rem;
     border-top: 1px solid var(--border-color);
 }
