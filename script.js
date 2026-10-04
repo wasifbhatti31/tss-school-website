@@ -1,5 +1,5 @@
 /**
- * Summit Crest Academy - Main JavaScript Module
+ * Taqwa Higher Secondary School - Main JavaScript Module
  * Handles Navigation, Mobile Hamburger Menu, Modal Dialogs,
  * Form Validation, Scroll Animations, and Smooth Interactivity.
  */
