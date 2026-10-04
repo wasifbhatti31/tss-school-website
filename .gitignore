@@ -1,0 +1,8 @@
+# Local server logs & temporary files
+.system_generated/
+scratch/
+*.log
+
+# OS metadata
+.DS_Store
+Thumbs.db

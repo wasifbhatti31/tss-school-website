@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Summit Crest Academy - Inspiring minds, building futures with world-class education, expert faculty, and modern facilities.">
+    <title>Summit Crest Academy | Excellence in Education</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Top Announcement Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-info">
+                <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Admissions Helpline: +1 (800) 555-0199</span>
+                <span class="desktop-only"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> admissions@summitcrest.edu</span>
+            </div>
+            <div class="top-announcement">
+                <span class="badge">Notice</span> 🎓 Applications Open for Academic Session 2026-2027
+            </div>
+        </div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header class="site-header" id="site-header">
+        <div class="container navbar-container">
+            <a href="#home" class="logo">
+                <div class="logo-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                        <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <span class="brand-name">Summit Crest</span>
+                    <span class="brand-sub">Academy</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#academics" class="nav-link">Academics</a></li>
+                    <li><a href="#facilities" class="nav-link">Facilities</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn btn-primary open-modal-btn" aria-label="Apply Now">Apply Now</button>
+                <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle Navigation Menu" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Nav Drawer -->
+        <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+        <nav class="mobile-nav-drawer" id="mobile-nav-drawer" aria-label="Mobile Navigation">
+            <div class="mobile-nav-header">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <span class="brand-name">Summit Crest</span>
+                    </div>
+                </div>
+                <button class="close-btn" id="close-mobile-nav" aria-label="Close menu">&times;</button>
+            </div>
+            <ul class="mobile-nav-menu">
+                <li><a href="#home" class="mobile-link">Home</a></li>
+                <li><a href="#about" class="mobile-link">About Us</a></li>
+                <li><a href="#academics" class="mobile-link">Academics</a></li>
+                <li><a href="#facilities" class="mobile-link">Facilities</a></li>
+                <li><a href="#contact" class="mobile-link">Contact</a></li>
+            </ul>
+            <div class="mobile-nav-footer">
+                <button class="btn btn-primary btn-full open-modal-btn">Apply Now</button>
+                <div class="mobile-contact-info">
+                    <p>📞 +1 (800) 555-0199</p>
+                    <p>✉️ admissions@summitcrest.edu</p>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-bg-overlay"></div>
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="star-icon">★</span> Ranked #1 School for Academic Excellence
+                    </div>
+                    <h1 class="hero-title">Empowering Tomorrow's Leaders Today</h1>
+                    <p class="hero-subtitle">At Summit Crest Academy, we cultivate intellectual curiosity, character development, and global vision within an inspiring learning environment.</p>
+                    <div class="hero-cta-group">
+                        <button class="btn btn-gold open-modal-btn">Apply Now <span>&rarr;</span></button>
+                        <a href="#facilities" class="btn btn-outline-light">Explore Campus</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Stats Bar -->
+            <div class="hero-stats">
+                <div class="container stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="99.8">99.8%</span>
+                        <span class="stat-label">Graduation Rate</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="25">25+</span>
+                        <span class="stat-label">Years of Excellence</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">12:1</span>
+                        <span class="stat-label">Student-Teacher Ratio</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="50">50+</span>
+                        <span class="stat-label">Clubs & Athletics</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section about-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag">About SCA</span>
+                    <h2 class="section-title">Inspiring Minds, Building Futures</h2>
+                    <p class="section-description">Founded with a commitment to holistic education, Summit Crest Academy nurtures curiosity, resilience, and ethical leadership in every student.</p>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-content">
+                        <h3>Our Mission & Vision</h3>
+                        <p class="lead-text">Our mission is to empower young minds with world-class education, critical thinking skills, and moral integrity to excel in an ever-changing global society.</p>
+                        <p>We believe that every child possesses unique potential. Through personalized mentorship, innovative STEM programs, and rich co-curricular opportunities, we inspire our students to explore their passions and make meaningful contributions to the world.</p>
+                        
+                        <div class="mission-highlights">
+                            <div class="highlight-item">
+                                <div class="icon-box">✓</div>
+                                <div>
+                                    <h4>Holistic Development</h4>
+                                    <p>Nurturing academic, emotional, and physical well-being.</p>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="icon-box">✓</div>
+                                <div>
+                                    <h4>Global Perspective</h4>
+                                    <p>Cultivating cultural awareness and digital citizenship.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="principal-quote">
+                            <p class="quote-text">"Education is not merely the accumulation of facts, but the training of the mind to think critically and act compassionately."</p>
+                            <div class="principal-author">
+                                <strong>Dr. Eleanor Vance</strong>
+                                <span>Head of School & Principal</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-cards-wrapper">
+                        <div class="values-card-grid">
+                            <div class="value-card">
+                                <div class="value-icon">🎓</div>
+                                <h4>Academic Excellence</h4>
+                                <p>Rigorous IB and AP curricula tailored for top university admissions.</p>
+                            </div>
+                            <div class="value-card">
+                                <div class="value-icon">🔬</div>
+                                <h4>Innovation & Tech</h4>
+                                <p>Cutting-edge robotics labs, coding bootcamps, and MakerSpaces.</p>
+                            </div>
+                            <div class="value-card">
+                                <div class="value-icon">🤝</div>
+                                <h4>Character & Integrity</h4>
+                                <p>Instilling empathy, community service, and ethical responsibility.</p>
+                            </div>
+                            <div class="value-card">
+                                <div class="value-icon">🎨</div>
+                                <h4>Creative Expression</h4>
+                                <p>Comprehensive performing arts, music, and fine arts programs.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Academics Section -->
+        <section id="academics" class="section academics-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag">Academic Pathways</span>
+                    <h2 class="section-title">Educational Programs</h2>
+                    <p class="section-description">Tailored learning stages designed to nurture growth from foundational early years to college readiness.</p>
+                </div>
+
+                <div class="academics-grid">
+                    <!-- Primary School -->
+                    <div class="academic-card">
+                        <div class="card-badge">Grades K - 5</div>
+                        <div class="academic-icon">🌱</div>
+                        <h3>Primary School</h3>
+                        <p>Focuses on curiosity, literacy, numeracy, and foundational social skills in a nurturing, play-based environment.</p>
+                        <ul class="program-features">
+                            <li>Inquiry-Based Learning</li>
+                            <li>Bilingual Immersion</li>
+                            <li>Creative Arts & Music</li>
+                        </ul>
+                    </div>
+
+                    <!-- Middle School -->
+                    <div class="academic-card featured">
+                        <div class="card-badge font-gold">Grades 6 - 8</div>
+                        <div class="academic-icon">🚀</div>
+                        <h3>Middle School</h3>
+                        <p>Promotes analytical thinking, STEM integration, and personal identity through collaborative problem solving.</p>
+                        <ul class="program-features">
+                            <li>Advanced STEM Modules</li>
+                            <li>Leadership & Debating</li>
+                            <li>Competitive Athletics</li>
+                        </ul>
+                    </div>
+
+                    <!-- High School -->
+                    <div class="academic-card">
+                        <div class="card-badge">Grades 9 - 12</div>
+                        <div class="academic-icon">🏛️</div>
+                        <h3>High School & AP</h3>
+                        <p>Prepares students for prestigious global universities through Advanced Placement courses and leadership portfolios.</p>
+                        <ul class="program-features">
+                            <li>20+ AP & Honors Subjects</li>
+                            <li>University Counseling</li>
+                            <li>Global Exchange Programs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features / Facilities Section -->
+        <section id="facilities" class="section facilities-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag">Campus & Infrastructure</span>
+                    <h2 class="section-title">World-Class Facilities</h2>
+                    <p class="section-description">Explore our state-of-the-art campus designed to spark creativity, scientific discovery, and physical fitness.</p>
+                </div>
+
+                <div class="facilities-grid">
+                    <!-- Facility Card 1 -->
+                    <div class="facility-card">
+                        <div class="facility-image-wrapper">
+                            <div class="facility-icon-badge">👨‍🏫</div>
+                            <div class="facility-img-bg img-teachers"></div>
+                        </div>
+                        <div class="facility-content">
+                            <span class="facility-category">Faculty</span>
+                            <h3>Expert Teachers</h3>
+                            <p>Over 85% of our faculty hold advanced Master's and Doctorate degrees in their respective academic disciplines.</p>
+                            <a href="#contact" class="facility-link">Learn More &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Facility Card 2 -->
+                    <div class="facility-card">
+                        <div class="facility-image-wrapper">
+                            <div class="facility-icon-badge">🔬</div>
+                            <div class="facility-img-bg img-labs"></div>
+                        </div>
+                        <div class="facility-content">
+                            <span class="facility-category">Science & Tech</span>
+                            <h3>Modern Labs</h3>
+                            <p>Fully equipped Physics, Chemistry, Biology, and AI Robotics research centers with university-grade equipment.</p>
+                            <a href="#contact" class="facility-link">Learn More &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Facility Card 3 -->
+                    <div class="facility-card">
+                        <div class="facility-image-wrapper">
+                            <div class="facility-icon-badge">📚</div>
+                            <div class="facility-img-bg img-library"></div>
+                        </div>
+                        <div class="facility-content">
+                            <span class="facility-category">Resource Center</span>
+                            <h3>Digital Library</h3>
+                            <p>Over 50,000 physical titles, quiet study pods, and 24/7 access to international research journal databases.</p>
+                            <a href="#contact" class="facility-link">Learn More &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Facility Card 4 -->
+                    <div class="facility-card">
+                        <div class="facility-image-wrapper">
+                            <div class="facility-icon-badge">⚽</div>
+                            <div class="facility-img-bg img-sports"></div>
+                        </div>
+                        <div class="facility-content">
+                            <span class="facility-category">Athletics</span>
+                            <h3>Sports Complex</h3>
+                            <p>Includes an Olympic-sized indoor swimming pool, synthetic track, FIFA-standard turf, and basketball courts.</p>
+                            <a href="#contact" class="facility-link">Learn More &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Banner -->
+        <section class="cta-banner-section">
+            <div class="container">
+                <div class="cta-banner-card">
+                    <div class="cta-banner-content">
+                        <h2>Ready to Give Your Child the Best Start?</h2>
+                        <p>Admissions for the 2026-2027 academic year are now open. Schedule a campus tour or apply online today.</p>
+                    </div>
+                    <div class="cta-banner-buttons">
+                        <button class="btn btn-gold btn-lg open-modal-btn">Apply For Admission</button>
+                        <a href="#contact" class="btn btn-outline-light btn-lg">Schedule a Tour</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag">Connect With Us</span>
+                    <h2 class="section-title">Contact & Campus Location</h2>
+                    <p class="section-description">Have questions regarding admissions, curriculum, or visiting? Get in touch with our team.</p>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- Contact Info Column -->
+                    <div class="contact-info-card">
+                        <h3>Get In Touch</h3>
+                        <p>We invite you to visit our campus and experience our vibrant community firsthand.</p>
+
+                        <div class="info-list">
+                            <div class="info-item">
+                                <div class="info-icon">📍</div>
+                                <div>
+                                    <strong>Campus Address</strong>
+                                    <p>125 Academy Boulevard, Crestview Heights, CA 90210</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon">📞</div>
+                                <div>
+                                    <strong>Phone Numbers</strong>
+                                    <p>Main Office: +1 (800) 555-0199<br>Admissions Direct: +1 (800) 555-0200</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon">✉️</div>
+                                <div>
+                                    <strong>Email Addresses</strong>
+                                    <p>General: info@summitcrest.edu<br>Admissions: admissions@summitcrest.edu</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon">⏰</div>
+                                <div>
+                                    <strong>Office Hours</strong>
+                                    <p>Monday - Friday: 8:00 AM - 4:30 PM<br>Saturday (By Appointment): 9:00 AM - 1:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mini Map Card Preview -->
+                        <div class="map-preview-card">
+                            <div class="map-placeholder">
+                                <div class="pin">📍 Summit Crest Academy</div>
+                                <span>Interactive Map View</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form Column -->
+                    <div class="contact-form-wrapper">
+                        <form id="contact-form" class="contact-form" novalidate>
+                            <h3>Send Us a Message</h3>
+                            <p class="form-subtext">Fill out the form below and an admissions counselor will reach out within 24 hours.</p>
+
+                            <div class="form-group-row">
+                                <div class="form-group">
+                                    <label for="contact-name">Parent / Guardian Name *</label>
+                                    <input type="text" id="contact-name" name="name" placeholder="John Doe" required>
+                                    <span class="error-msg" id="name-error">Please enter your name</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-email">Email Address *</label>
+                                    <input type="email" id="contact-email" name="email" placeholder="john@example.com" required>
+                                    <span class="error-msg" id="email-error">Please enter a valid email address</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group-row">
+                                <div class="form-group">
+                                    <label for="contact-phone">Phone Number</label>
+                                    <input type="tel" id="contact-phone" name="phone" placeholder="(555) 000-0000">
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-grade">Grade of Interest</label>
+                                    <select id="contact-grade" name="grade">
+                                        <option value="">Select Grade</option>
+                                        <option value="Kindergarten">Kindergarten (K)</option>
+                                        <option value="Primary (1-5)">Primary School (Grades 1-5)</option>
+                                        <option value="Middle (6-8)">Middle School (Grades 6-8)</option>
+                                        <option value="High (9-12)">High School (Grades 9-12)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-message">Your Message or Inquiry *</label>
+                                <textarea id="contact-message" name="message" rows="4" placeholder="How can we assist you?" required></textarea>
+                                <span class="error-msg" id="message-error">Please enter a message</span>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-full" id="submit-contact-btn">Send Message</button>
+                            <div id="form-alert" class="form-alert"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-grid">
+                <!-- Footer Column 1: Brand -->
+                <div class="footer-col brand-col">
+                    <a href="#home" class="logo footer-logo">
+                        <div class="logo-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                                <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                            </svg>
+                        </div>
+                        <div class="logo-text">
+                            <span class="brand-name">Summit Crest</span>
+                            <span class="brand-sub">Academy</span>
+                        </div>
+                    </a>
+                    <p class="footer-about">Providing world-class educational experiences that empower students to become ethical, confident, and compassionate global leaders.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook" class="social-icon">f</a>
+                        <a href="#" aria-label="Twitter / X" class="social-icon">x</a>
+                        <a href="#" aria-label="Instagram" class="social-icon">in</a>
+                        <a href="#" aria-label="YouTube" class="social-icon">yt</a>
+                    </div>
+                </div>
+
+                <!-- Footer Column 2: Quick Links -->
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Our School</a></li>
+                        <li><a href="#academics">Academic Programs</a></li>
+                        <li><a href="#facilities">Campus Facilities</a></li>
+                        <li><a href="#contact">Contact & Location</a></li>
+                    </ul>
+                </div>
+
+                <!-- Footer Column 3: Admissions -->
+                <div class="footer-col">
+                    <h4>Admissions</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" class="open-modal-btn">Apply Online</a></li>
+                        <li><a href="#contact">Tuition & Financial Aid</a></li>
+                        <li><a href="#contact">Schedule a Campus Tour</a></li>
+                        <li><a href="#academics">Curriculum Overview</a></li>
+                        <li><a href="#contact">School Calendar</a></li>
+                    </ul>
+                </div>
+
+                <!-- Footer Column 4: Newsletter -->
+                <div class="footer-col">
+                    <h4>Stay Updated</h4>
+                    <p>Subscribe to our school newsletter to receive news, event updates, and announcements.</p>
+                    <form id="newsletter-form" class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required aria-label="Email Address for newsletter">
+                        <button type="submit" class="btn btn-gold">Subscribe</button>
+                    </form>
+                    <div id="newsletter-alert" class="newsletter-alert"></div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Summit Crest Academy. All Rights Reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <span class="sep">•</span>
+                    <a href="#">Terms of Use</a>
+                    <span class="sep">•</span>
+                    <a href="#">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Admission Application Modal -->
+    <div class="modal-backdrop" id="modal-backdrop">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>Online Admission Application</h3>
+                <button class="modal-close-btn" id="modal-close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="admission-form">
+                    <div class="form-group-row">
+                        <div class="form-group">
+                            <label for="student-name">Student Full Name *</label>
+                            <input type="text" id="student-name" required placeholder="Alex Smith">
+                        </div>
+                        <div class="form-group">
+                            <label for="student-dob">Date of Birth *</label>
+                            <input type="date" id="student-dob" required>
+                        </div>
+                    </div>
+                    <div class="form-group-row">
+                        <div class="form-group">
+                            <label for="parent-name">Parent / Guardian Name *</label>
+                            <input type="text" id="parent-name" required placeholder="Jane Smith">
+                        </div>
+                        <div class="form-group">
+                            <label for="apply-grade">Grade Applying For *</label>
+                            <select id="apply-grade" required>
+                                <option value="">Select Grade</option>
+                                <option value="Kindergarten">Kindergarten (K)</option>
+                                <option value="Grade 1-5">Primary (Grades 1-5)</option>
+                                <option value="Grade 6-8">Middle School (Grades 6-8)</option>
+                                <option value="Grade 9-12">High School (Grades 9-12)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group-row">
+                        <div class="form-group">
+                            <label for="apply-email">Parent Email *</label>
+                            <input type="email" id="apply-email" required placeholder="jane.smith@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="apply-phone">Phone Number *</label>
+                            <input type="tel" id="apply-phone" required placeholder="(555) 123-4567">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="apply-notes">Additional Notes or Previous Schooling</label>
+                        <textarea id="apply-notes" rows="3" placeholder="Tell us briefly about your child's interests or goals..."></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-dark" id="modal-cancel-btn">Cancel</button>
+                        <button type="submit" class="btn btn-gold">Submit Application</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>
