@@ -79,9 +79,31 @@
     padding: 0;
 }
 
+/* Fluid Stepped Typography for all Mobile Devices, Tablets & Laptops */
 html {
     scroll-behavior: smooth;
-    font-size: 17.5px;
+    font-size: 17px;
+    -webkit-text-size-adjust: 100%;
+}
+
+@media (min-width: 1600px) {
+    html { font-size: 18px; }
+}
+
+@media (max-width: 1200px) {
+    html { font-size: 16px; }
+}
+
+@media (max-width: 992px) {
+    html { font-size: 15.5px; }
+}
+
+@media (max-width: 768px) {
+    html { font-size: 15px; }
+}
+
+@media (max-width: 480px) {
+    html { font-size: 14.5px; }
 }
 
 body {
@@ -90,6 +112,8 @@ body {
     color: var(--text-main);
     line-height: 1.7;
     overflow-x: hidden;
+    width: 100%;
+    position: relative;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -97,6 +121,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-heading);
     font-weight: 700;
     letter-spacing: -0.01em;
+    overflow-wrap: break-word;
 }
 
 a { color: inherit; text-decoration: none; transition: var(--transition); }
@@ -107,7 +132,7 @@ img { max-width: 100%; height: auto; display: block; }
     width: 100%;
     max-width: 1360px;
     margin: 0 auto;
-    padding: 0 1.75rem;
+    padding: 0 clamp(1rem, 3.5vw, 2rem);
 }
 
 .text-center { text-align: center; }
@@ -406,8 +431,9 @@ img { max-width: 100%; height: auto; display: block; }
 .mobile-drawer {
     position: fixed;
     top: 0;
-    right: -320px;
-    width: 300px;
+    right: -340px;
+    width: 320px;
+    max-width: 85vw;
     height: 100vh;
     background-color: var(--mocha-primary);
     z-index: 1002;
@@ -416,10 +442,10 @@ img { max-width: 100%; height: auto; display: block; }
     flex-direction: column;
     justify-content: space-between;
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.mobile-drawer.active { transform: translateX(-320px); }
+.mobile-drawer.active { transform: translateX(-340px); }
 
 .drawer-top {
     display: flex;
@@ -467,13 +493,28 @@ img { max-width: 100%; height: auto; display: block; }
     margin-top: 0.5rem;
 }
 
+@media (max-width: 1200px) {
+    .nav-links { gap: 1.15rem; }
+    .nav-link { font-size: 0.92rem; }
+    .brand-title { font-size: 1.75rem; }
+}
+
 @media (max-width: 1080px) {
     .desktop-nav, .hide-mobile { display: none !important; }
     .hamburger-toggle { display: flex !important; }
+    .header-flex { height: 72px; }
 }
 
-@media (max-width: 768px) {
-    html { font-size: 16px; }
+@media (max-width: 480px) {
+    .header-flex { height: 64px; }
+    .brand-title { font-size: 1.5rem; }
+    .crest-icon { width: 38px; height: 38px; }
+    .crest-icon svg { width: 20px; height: 20px; }
+    .header-cta-group .btn-crimson {
+        padding: 0.45rem 0.95rem;
+        font-size: 0.825rem;
+        min-height: 38px;
+    }
 }
 
 /* Hero Section (Earthy Dark Mocha & Warm Sand) */
@@ -654,10 +695,36 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 @media (max-width: 992px) {
-    .hero-content-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-    .hero-left { text-align: center; }
+    .hero-content-grid { grid-template-columns: 1fr; gap: 2.75rem; text-align: center; }
+    .hero-left { display: flex; flex-direction: column; align-items: center; }
     .hero-description { margin-left: auto; margin-right: auto; }
-    .hero-button-group, .hero-stats-bar { justify-content: center; }
+    .hero-button-group { justify-content: center; }
+    .hero-stats-bar { justify-content: center; }
+    .portal-ribbon { margin-top: 1.75rem; }
+}
+
+@media (max-width: 600px) {
+    .hero-wrapper { padding: 3.5rem 0 4.5rem 0; }
+    .hero-button-group {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.85rem;
+    }
+    .hero-button-group .btn {
+        width: 100%;
+    }
+    .hero-stats-bar {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem 0.75rem;
+        width: 100%;
+        text-align: center;
+        border-top: 1px solid rgba(212, 163, 115, 0.25);
+        padding-top: 1.5rem;
+    }
+    .hero-notice-card {
+        padding: 1.5rem 1.15rem;
+    }
 }
 
 /* Quick Feature Portal Ribbon */
@@ -820,9 +887,20 @@ img { max-width: 100%; height: auto; display: block; }
 
 @media (max-width: 992px) {
     .stats-4grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+    .stats-counter-banner { padding: 3rem 0; margin-top: 2.5rem; }
 }
 
 @media (max-width: 520px) {
+    .stats-4grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+    .stat-card { padding: 1.25rem 0.65rem; }
+    .stat-icon-wrap { width: 48px; height: 48px; font-size: 1.6rem; margin-bottom: 0.5rem; }
+    .stat-number { font-size: 1.95rem; }
+    .stat-plus { font-size: 1.35rem; }
+    .stat-title { font-size: 0.95rem; margin-bottom: 0.25rem; }
+    .stat-desc { font-size: 0.75rem; }
+}
+
+@media (max-width: 360px) {
     .stats-4grid { grid-template-columns: 1fr; }
 }
 
@@ -1163,7 +1241,11 @@ img { max-width: 100%; height: auto; display: block; }
 
 .prog-body button { margin-top: auto; }
 
-@media (max-width: 992px) {
+@media (max-width: 1080px) {
+    .programs-3col-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+}
+
+@media (max-width: 720px) {
     .programs-3col-grid { grid-template-columns: 1fr; }
 }
 
@@ -1643,12 +1725,13 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 /* Floating WhatsApp Button */
+
 .floating-whatsapp {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 45px;
-    height: 45px;
+    bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+    right: calc(20px + env(safe-area-inset-right, 0px));
+    width: 46px;
+    height: 46px;
     background-color: #25d366;
     color: #ffffff;
     border-radius: 50%;
@@ -1733,4 +1816,14 @@ img { max-width: 100%; height: auto; display: block; }
     margin-top: 1.5rem;
     padding-top: 1rem;
     border-top: 1px solid var(--border);
+}
+
+@media (max-width: 600px) {
+    .modal-backdrop { padding: 0.75rem; }
+    .modal-card { width: 100%; border-radius: var(--radius-md); max-height: 94vh; }
+    .modal-header { padding: 1.15rem 1.25rem; border-radius: var(--radius-md) var(--radius-md) 0 0; }
+    .modal-header h3 { font-size: 1.15rem; }
+    .modal-body { padding: 1.25rem; }
+    .modal-footer { flex-direction: column-reverse; gap: 0.65rem; }
+    .modal-footer .btn { width: 100%; }
 }
