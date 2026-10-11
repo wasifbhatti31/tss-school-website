@@ -200,4 +200,51 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.input-group').forEach(el => el.classList.remove('has-error'));
     }
 
+    /* --------------------------------------------------------------------------
+       4. Animated Statistics Counter (Smooth Count-Up)
+       -------------------------------------------------------------------------- */
+    const counterElements = document.querySelectorAll('.stat-number');
+    let countersStarted = false;
+
+    function runCounters() {
+        if (countersStarted) return;
+        countersStarted = true;
+
+        counterElements.forEach(counter => {
+            const target = +counter.getAttribute('data-target');
+            if (!target) return;
+
+            const duration = 1800;
+            const stepTime = 25;
+            const totalSteps = duration / stepTime;
+            const increment = target / totalSteps;
+            let current = 0;
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    counter.textContent = target.toLocaleString();
+                    clearInterval(timer);
+                } else {
+                    counter.textContent = Math.floor(current).toLocaleString();
+                }
+            }, stepTime);
+        });
+    }
+
+    const statsSection = document.querySelector('.stats-counter-banner');
+    if (statsSection && 'IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    runCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        observer.observe(statsSection);
+    } else {
+        runCounters();
+    }
+
 });
