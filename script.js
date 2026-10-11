@@ -1,5 +1,5 @@
 /**
- * Taqwa Higher Secondary School Lahore
+ * TSS Lahore
  * Interactive Control Module (Navigation, Mobile Drawer, Modal & Form Validation)
  */
 
