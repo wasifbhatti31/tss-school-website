@@ -1461,31 +1461,31 @@ img { max-width: 100%; height: auto; display: block; }
 
 .f-brand .brand-crest-logo { margin-bottom: 1rem; }
 .site-footer .brand-title {
-    color: #fdfbf7;
-    font-weight: 600;
+    color: #ffffff !important;
+    font-weight: 700;
     font-size: 1.85rem;
     letter-spacing: 0.06em;
 }
 
 .site-footer .crest-icon {
-    background: rgba(212, 163, 115, 0.15);
-    color: var(--sand-accent);
-    border: 1.5px solid var(--sand-accent);
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
 }
 
 .site-footer .brand-crest-logo:hover .brand-title {
-    color: var(--sand-accent);
+    color: var(--sand-accent) !important;
 }
 
 .mobile-drawer .brand-title {
-    color: #fdfbf7;
-    font-weight: 600;
+    color: #ffffff !important;
+    font-weight: 700;
 }
 
 .mobile-drawer .crest-icon {
-    background: rgba(212, 163, 115, 0.15);
-    color: var(--sand-accent);
-    border: 1.5px solid var(--sand-accent);
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
 }
 
 .f-text { font-size: 0.875rem; line-height: 1.65; margin-bottom: 1rem; color: #d5c7bd; }
