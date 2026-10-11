@@ -1460,6 +1460,34 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .f-brand .brand-crest-logo { margin-bottom: 1rem; }
+.site-footer .brand-title {
+    color: #fdfbf7;
+    font-weight: 600;
+    font-size: 1.85rem;
+    letter-spacing: 0.06em;
+}
+
+.site-footer .crest-icon {
+    background: rgba(212, 163, 115, 0.15);
+    color: var(--sand-accent);
+    border: 1.5px solid var(--sand-accent);
+}
+
+.site-footer .brand-crest-logo:hover .brand-title {
+    color: var(--sand-accent);
+}
+
+.mobile-drawer .brand-title {
+    color: #fdfbf7;
+    font-weight: 600;
+}
+
+.mobile-drawer .crest-icon {
+    background: rgba(212, 163, 115, 0.15);
+    color: var(--sand-accent);
+    border: 1.5px solid var(--sand-accent);
+}
+
 .f-text { font-size: 0.875rem; line-height: 1.65; margin-bottom: 1rem; color: #d5c7bd; }
 .f-phone { font-size: 0.95rem; color: #fdfbf7; }
 
@@ -1493,7 +1521,12 @@ img { max-width: 100%; height: auto; display: block; }
     padding-top: 2rem;
     font-size: 0.825rem;
     text-align: center;
-    color: #a89a90;
+    color: #b5a79d;
+}
+
+.footer-copy strong {
+    color: #fdfbf7;
+    font-weight: 600;
 }
 
 @media (max-width: 992px) {
