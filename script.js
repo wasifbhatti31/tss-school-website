@@ -46,38 +46,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* --------------------------------------------------------------------------
-       2. Sticky Header & Scrollspy Active Link Highlighting
+       2. Sticky Header (Clean - No category changes on scroll)
        -------------------------------------------------------------------------- */
     const siteHeader = document.getElementById('site-header');
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.desktop-nav .nav-link');
 
     window.addEventListener('scroll', () => {
         // Sticky shadow transition
-        if (window.scrollY > 30) {
+        if (window.scrollY > 20) {
             siteHeader.classList.add('scrolled');
         } else {
             siteHeader.classList.remove('scrolled');
         }
-
-        // Active link tracking
-        let currentSection = '';
-        const scrollPosition = window.scrollY + 100;
-
-        sections.forEach(sec => {
-            const top = sec.offsetTop;
-            const height = sec.offsetHeight;
-            if (scrollPosition >= top && scrollPosition < top + height) {
-                currentSection = sec.getAttribute('id');
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${currentSection}`) {
-                link.classList.add('active');
-            }
-        });
     });
 
     /* --------------------------------------------------------------------------
