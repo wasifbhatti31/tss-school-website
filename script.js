@@ -232,7 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const statsSection = document.querySelector('.stats-counter-banner');
+    const statsSection = document.querySelector('.floating-stats-wrapper, .stats-counter-banner');
     if (statsSection && 'IntersectionObserver' in window) {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
