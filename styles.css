@@ -1094,12 +1094,12 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* Section Containers & Faint 5% Opacity Geometric Watermark */
 .section-container {
-    padding: clamp(2.5rem, 4vw, 3.5rem) 0;
+    padding: clamp(1.6rem, 2.8vw, 2.25rem) 0;
 }
 
 .section-header-center {
     max-width: 720px;
-    margin: 0 auto 1.85rem auto;
+    margin: 0 auto 1.25rem auto;
     text-align: center;
 }
 
@@ -1665,10 +1665,10 @@ img { max-width: 100%; height: auto; display: block; }
     background: linear-gradient(145deg, #0F2942 0%, #091B2C 100%);
     color: #ffffff;
     border-radius: var(--radius-lg);
-    padding: 3.5rem;
+    padding: 2rem 2.25rem;
     display: grid;
     grid-template-columns: 7fr 5fr;
-    gap: 3rem;
+    gap: 2rem;
     border: 1px solid rgba(212, 175, 55, 0.3);
     box-shadow: var(--shadow-lg);
 }
@@ -1684,25 +1684,25 @@ img { max-width: 100%; height: auto; display: block; }
     letter-spacing: 0.05em;
 }
 
-.adm-left h2 { font-family: var(--font-heading); font-size: 2.15rem; font-weight: 700; margin: 0.65rem 0; color: #fdfbf7; }
-.adm-left p { color: #d5c7bd; font-size: 0.95rem; margin-bottom: 2rem; }
+.adm-left h2 { font-family: var(--font-heading); font-size: 1.85rem; font-weight: 700; margin: 0.5rem 0; color: #fdfbf7; }
+.adm-left p { color: #d5c7bd; font-size: 0.925rem; margin-bottom: 1.25rem; }
 
 .adm-steps-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    gap: 0.85rem;
 }
 
 .adm-step-card {
     background: rgba(255, 255, 255, 0.07);
     border: 1px solid rgba(212, 163, 115, 0.22);
     border-radius: var(--radius-md);
-    padding: 1.25rem;
+    padding: 1rem;
 }
 
 .step-circle {
-    width: 28px;
-    height: 28px;
+    width: 26px;
+    height: 26px;
     background: var(--gold-accent);
     color: #091b2c;
     font-weight: 800;
@@ -1710,27 +1710,27 @@ img { max-width: 100%; height: auto; display: block; }
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.85rem;
-    margin-bottom: 0.75rem;
+    font-size: 0.82rem;
+    margin-bottom: 0.5rem;
 }
 
-.adm-step-card h4 { font-family: var(--font-heading); font-size: 1rem; font-weight: 700; color: #ffffff; margin-bottom: 0.35rem; }
-.adm-step-card p { font-size: 0.82rem; color: #cbd5e1; margin: 0; }
+.adm-step-card h4 { font-family: var(--font-heading); font-size: 0.95rem; font-weight: 700; color: #ffffff; margin-bottom: 0.25rem; }
+.adm-step-card p { font-size: 0.8rem; color: #cbd5e1; margin: 0; }
 
 .adm-callout {
     background: rgba(255, 255, 255, 0.07);
     border: 1px solid rgba(212, 163, 115, 0.25);
     border-radius: var(--radius-md);
-    padding: 2.25rem 2rem;
+    padding: 1.5rem 1.25rem;
     text-align: center;
     width: 100%;
 }
 
-.adm-callout h3 { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: #fdfbf7; margin-bottom: 0.5rem; }
-.adm-callout p { font-size: 0.88rem; color: #d5c7bd; margin-bottom: 1.5rem; }
+.adm-callout h3 { font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; color: #fdfbf7; margin-bottom: 0.35rem; }
+.adm-callout p { font-size: 0.85rem; color: #d5c7bd; margin-bottom: 1rem; }
 
 @media (max-width: 992px) {
-    .adm-banner-box { grid-template-columns: 1fr; padding: 2.5rem 2rem; }
+    .adm-banner-box { grid-template-columns: 1fr; padding: 1.75rem 1.25rem; }
     .adm-steps-grid { grid-template-columns: 1fr; }
 }
 
@@ -1856,15 +1856,15 @@ img { max-width: 100%; height: auto; display: block; }
 .site-footer {
     background-color: var(--navy-dark);
     color: #cbd5e1;
-    padding: 3.5rem 0 1.75rem 0;
+    padding: 2.25rem 0 1.25rem 0;
     border-top: 2px solid rgba(212, 175, 55, 0.3);
 }
 
 .footer-4grid {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1.5fr;
-    gap: 2.5rem;
-    padding-bottom: 2.25rem;
+    gap: 2rem;
+    padding-bottom: 1.5rem;
     border-bottom: 1px solid rgba(212, 175, 55, 0.2);
 }
 
