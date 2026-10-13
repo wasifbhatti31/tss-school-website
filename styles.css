@@ -399,12 +399,14 @@ img { max-width: 100%; height: auto; display: block; }
     transition: var(--transition);
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link.active {
     color: var(--gold-accent);
     opacity: 1;
 }
 
-.nav-link:hover::after {
+.nav-link:hover::after,
+.nav-link.active::after {
     content: '';
     position: absolute;
     bottom: -4px;
@@ -513,7 +515,11 @@ img { max-width: 100%; height: auto; display: block; }
     border-bottom: 1px solid rgba(212, 175, 55, 0.15);
 }
 
-.drawer-item:hover { color: var(--gold-accent); }
+.drawer-item:hover,
+.drawer-item.active {
+    color: var(--gold-accent);
+    font-weight: 700;
+}
 
 .drawer-bottom {
     display: flex;
@@ -549,6 +555,128 @@ img { max-width: 100%; height: auto; display: block; }
         font-size: 0.825rem;
         min-height: 38px;
     }
+}
+
+/* Inner Page Banner (Multi-Page Navigation Header) */
+.page-banner {
+    position: relative;
+    background: linear-gradient(180deg, #0f2942 0%, #091b2c 100%);
+    color: #ffffff;
+    padding: 3.5rem 0 3.8rem 0;
+    text-align: center;
+    border-bottom: 2px solid var(--gold-accent);
+    overflow: hidden;
+}
+
+.page-banner .page-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='70' height='70' viewBox='0 0 70 70' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23D4AF37' stroke-width='0.75' stroke-opacity='0.04'%3E%3Cpath d='M35 0 L35 70 M0 35 L70 35 M0 0 L70 70 M0 70 L70 0'/%3E%3Cpolygon points='35,14 49,21 56,35 49,49 35,56 21,49 14,35 21,21'/%3E%3Cpolygon points='35,21 44,25 49,35 44,45 35,49 26,45 21,35 26,25'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat;
+    pointer-events: none;
+}
+
+.page-banner-content {
+    position: relative;
+    z-index: 2;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.breadcrumb-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--gold-accent);
+    margin-bottom: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.breadcrumb-nav a {
+    color: #cbd5e1;
+    transition: var(--transition);
+}
+
+.breadcrumb-nav a:hover {
+    color: #ffffff;
+}
+
+.breadcrumb-nav .sep {
+    color: rgba(212, 175, 55, 0.6);
+}
+
+.page-banner-title {
+    font-size: clamp(2rem, 4.2vw, 3rem);
+    font-family: var(--font-heading);
+    color: #ffffff;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.page-banner-desc {
+    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+    color: #cbd5e1;
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Call to Action Banner on Inner Pages */
+.page-cta-banner {
+    background: linear-gradient(135deg, var(--navy-primary) 0%, var(--navy-dark) 100%);
+    border-radius: var(--radius-lg);
+    border: 1.5px solid rgba(212, 175, 55, 0.35);
+    padding: 3rem 2rem;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: var(--shadow-lg);
+    margin-top: 3.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-cta-banner h3 {
+    font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+    color: #ffffff;
+    margin-bottom: 0.85rem;
+}
+
+.page-cta-banner p {
+    color: #cbd5e1;
+    font-size: 1.02rem;
+    max-width: 650px;
+    margin: 0 auto 1.85rem auto;
+}
+
+.page-cta-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Map Embed Container */
+.map-embed-wrapper {
+    margin-top: 2.5rem;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border);
+    height: 380px;
+    background: #e2e8f0;
+}
+
+.map-embed-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
 
 /* Hero Section (Oxford / Ivy League Prestige Style with Campus Background) */
