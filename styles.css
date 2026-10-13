@@ -1922,8 +1922,12 @@ img { max-width: 100%; height: auto; display: block; }
 .f-links a { color: #cbd5e1; font-size: 0.875rem; }
 .f-links a:hover { color: var(--gold-accent); padding-left: 0.3rem; }
 
-.f-addr { font-size: 0.875rem; margin-bottom: 1rem; line-height: 1.55; color: #cbd5e1; }
-.f-hours { font-size: 0.825rem; display: flex; flex-direction: column; }
+.f-addr { font-size: 0.875rem; margin-bottom: 0.85rem; line-height: 1.55; color: #cbd5e1; }
+.f-contacts-list { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 0.95rem; }
+.f-contact-item { display: inline-flex; align-items: center; gap: 0.6rem; color: #cbd5e1; font-size: 0.875rem; transition: var(--transition); }
+.f-contact-item svg { flex-shrink: 0; color: var(--gold-accent); }
+.f-contact-item:hover { color: var(--gold-accent); padding-left: 0.25rem; }
+.f-hours { font-size: 0.825rem; display: flex; flex-direction: column; margin-top: 0.65rem; padding-top: 0.65rem; border-top: 1px solid rgba(212, 175, 55, 0.15); }
 .f-hours strong { color: #ffffff; }
 
 .footer-copy {
