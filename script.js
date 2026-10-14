@@ -266,8 +266,12 @@ document.addEventListener('DOMContentLoaded', () => {
         countersStarted = true;
 
         counterElements.forEach(counter => {
-            const target = +counter.getAttribute('data-target');
-            if (!target) return;
+            const rawTarget = counter.getAttribute('data-target');
+            const target = parseFloat(rawTarget);
+            if (isNaN(target)) return;
+
+            const hasDecimals = (rawTarget && rawTarget.includes('.')) || (target % 1 !== 0);
+            const decimals = hasDecimals ? 1 : 0;
 
             const duration = 1800;
             const stepTime = 25;
@@ -278,10 +282,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const timer = setInterval(() => {
                 current += increment;
                 if (current >= target) {
-                    counter.textContent = target.toLocaleString();
+                    counter.textContent = hasDecimals ? target.toFixed(decimals) : target.toLocaleString();
                     clearInterval(timer);
                 } else {
-                    counter.textContent = Math.floor(current).toLocaleString();
+                    counter.textContent = hasDecimals ? current.toFixed(decimals) : Math.floor(current).toLocaleString();
                 }
             }, stepTime);
         });
