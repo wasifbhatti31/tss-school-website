@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
     <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="styles.css?v=11.0">
+    <link rel="stylesheet" href="styles.css?v=12.0">
 </head>
 <body>
 
@@ -63,7 +63,17 @@
                 <ul class="nav-links">
                     <li><a href="index.html" class="nav-link active">Home</a></li>
                     <li><a href="about.html" class="nav-link">About Us</a></li>
-                    <li><a href="academics.html" class="nav-link">Academics</a></li>
+                    <li class="has-dropdown">
+                        <a href="academics.html" class="nav-link nav-dropdown-toggle">
+                            Academics
+                            <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="middle.html" class="dropdown-link">Middle School (Class 6–8)</a></li>
+                            <li><a href="matric.html" class="dropdown-link">Matriculation (Class 9–10)</a></li>
+                            <li><a href="fsc-ics.html" class="dropdown-link">F.Sc &amp; ICS (Class 11–12)</a></li>
+                        </ul>
+                    </li>
                     <li><a href="hifz.html" class="nav-link">Hifz Wing</a></li>
                     <li><a href="why-tss.html" class="nav-link">Why TSS</a></li>
                     <li><a href="gallery.html" class="nav-link">Gallery</a></li>
@@ -113,7 +123,17 @@
             <nav class="drawer-menu">
                 <a href="index.html" class="drawer-item active">Home</a>
                 <a href="about.html" class="drawer-item">About Us</a>
-                <a href="academics.html" class="drawer-item">Academics</a>
+                <div class="drawer-dropdown">
+                    <div class="drawer-dropdown-header">
+                        <a href="academics.html" class="drawer-item drawer-parent">Academics</a>
+                        <button type="button" class="drawer-sub-toggle" aria-label="Toggle Academics Submenu">&#9662;</button>
+                    </div>
+                    <div class="drawer-submenu">
+                        <a href="middle.html" class="drawer-subitem">&bull; Middle School (Class 6–8)</a>
+                        <a href="matric.html" class="drawer-subitem">&bull; Matriculation (Class 9–10)</a>
+                        <a href="fsc-ics.html" class="drawer-subitem">&bull; F.Sc &amp; ICS (Class 11–12)</a>
+                    </div>
+                </div>
                 <a href="hifz.html" class="drawer-item">Hifz Wing</a>
                 <a href="why-tss.html" class="drawer-item">Why TSS</a>
                 <a href="gallery.html" class="drawer-item">Gallery</a>
@@ -416,7 +436,7 @@
                     <p class="section-subheading">Comprehensive educational pathways designed for Quranic memorization, middle school fundamentals, and intermediate college excellence.</p>
                 </div>
 
-                <div class="programs-3col-grid">
+                <div class="programs-3col-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
                     <!-- Program 1: Hifz-e-Quran -->
                     <div class="prog-card">
                         <div class="prog-banner hifz-theme">
@@ -441,7 +461,7 @@
                     </div>
 
                     <!-- Program 2: Middle School -->
-                    <div class="prog-card featured-prog">
+                    <div class="prog-card" id="middle">
                         <div class="prog-banner middle-theme">
                             <span class="prog-tag gold-badge">Class 6th to 8th</span>
                         </div>
@@ -456,27 +476,56 @@
                                 <li>Preparation for High School</li>
                             </ul>
 
-                            <button class="btn btn-crimson btn-full open-modal-btn">Apply for Middle School</button>
+                            <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+                                <a href="middle.html" class="btn btn-crimson btn-full">View Middle School Details &rarr;</a>
+                                <button class="btn btn-outline-dark btn-full open-modal-btn" data-program="Middle School (Class 6-8)">Apply for Middle School</button>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Program 3: Matric & F.Sc / ICS -->
-                    <div class="prog-card">
+                    <!-- Program 3: Matriculation -->
+                    <div class="prog-card featured-prog" id="matric">
                         <div class="prog-banner high-theme">
-                            <span class="prog-tag">Class 9th to 12th</span>
+                            <span class="prog-tag gold-badge">Class 9th &amp; 10th</span>
                         </div>
                         <div class="prog-body">
-                            <h3>Matric & F.Sc / ICS</h3>
-                            <p>Board examination preparation for BISE Lahore across Science (Pre-Medical, Pre-Eng), ICS, and Matriculation.</p>
+                            <h3>Matriculation Wing</h3>
+                            <p>Board examination preparation for BISE Lahore across Science (Biology) and Computer Science.</p>
                             
                             <ul class="prog-list">
-                                <li>Matric (Science & Computer Group)</li>
-                                <li>F.Sc Pre-Medical & Pre-Engineering</li>
-                                <li>ICS (Computer Science)</li>
-                                <li>Board Exam Test Sessions</li>
+                                <li>Matric Science (Biology &amp; Computer)</li>
+                                <li>99.9% Board Pass Rate Track Record</li>
+                                <li>Physics, Chem &amp; Computer Practicals</li>
+                                <li>4-Stage Board Test Sessions</li>
                             </ul>
 
-                            <button class="btn btn-outline-dark btn-full open-modal-btn">Apply for F.Sc / Matric</button>
+                            <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+                                <a href="matric.html" class="btn btn-crimson btn-full">View Matric Wing Details &rarr;</a>
+                                <button class="btn btn-outline-dark btn-full open-modal-btn" data-program="Class 9th (Matric)">Apply for Matric</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Program 4: Intermediate (F.Sc & ICS) -->
+                    <div class="prog-card" id="college">
+                        <div class="prog-banner high-theme" style="background: linear-gradient(135deg, #091b2c 0%, #1e3a5f 100%);">
+                            <span class="prog-tag">Class 11th &amp; 12th</span>
+                        </div>
+                        <div class="prog-body">
+                            <h3>F.Sc &amp; ICS College Wing</h3>
+                            <p>BISE Lahore affiliated Pre-Medical, Pre-Engineering, and ICS with entrance test grounding.</p>
+                            
+                            <ul class="prog-list">
+                                <li>F.Sc Pre-Medical (MDCAT Ready)</li>
+                                <li>F.Sc Pre-Engineering (ECAT Ready)</li>
+                                <li>ICS Computer Science (Tech Track)</li>
+                                <li>Senior Subject Specialist Faculty</li>
+                            </ul>
+
+                            <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+                                <a href="fsc-ics.html" class="btn btn-crimson btn-full">View College Wing Details &rarr;</a>
+                                <button class="btn btn-outline-dark btn-full open-modal-btn" data-program="F.Sc Pre-Medical">Apply for F.Sc / ICS</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -707,11 +756,9 @@
                     <h4>Programs</h4>
                     <ul class="f-links">
                         <li><a href="hifz.html">Hifz-e-Quran Program</a></li>
-                        <li><a href="academics.html#middle">Middle School (Class 6–8)</a></li>
-                        <li><a href="academics.html#matric">Matric Science &amp; Computer</a></li>
-                        <li><a href="academics.html#fsc">F.Sc Pre-Medical</a></li>
-                        <li><a href="academics.html#fsc">F.Sc Pre-Engineering</a></li>
-                        <li><a href="academics.html#ics">ICS Computer Science</a></li>
+                        <li><a href="middle.html">Middle School (Class 6–8)</a></li>
+                        <li><a href="matric.html">Matric Science &amp; Computer</a></li>
+                        <li><a href="fsc-ics.html">F.Sc &amp; ICS (Intermediate)</a></li>
                     </ul>
                 </div>
 
@@ -807,6 +854,6 @@
     </div>
 
     <!-- JavaScript File -->
-    <script src="script.js?v=7.0"></script>
+    <script src="script.js?v=8.0"></script>
 </body>
 </html>

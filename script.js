@@ -45,6 +45,21 @@ document.addEventListener('DOMContentLoaded', () => {
         item.addEventListener('click', closeMobileDrawer);
     });
 
+    const drawerSubToggles = document.querySelectorAll('.drawer-sub-toggle');
+    drawerSubToggles.forEach(toggle => {
+        toggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const parent = toggle.closest('.drawer-dropdown');
+            if (parent) parent.classList.toggle('open');
+        });
+    });
+
+    const drawerSubitems = document.querySelectorAll('.drawer-subitem');
+    drawerSubitems.forEach(subitem => {
+        subitem.addEventListener('click', closeMobileDrawer);
+    });
+
     /* --------------------------------------------------------------------------
        2. Sticky Header (Clean - No category changes on scroll)
        -------------------------------------------------------------------------- */
@@ -60,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* --------------------------------------------------------------------------
-       3. Admission Application Modal Dialog (Dynamic Hifz / Academic Adaptor)
+       3. Admission Application Modal Dialog (Dynamic Program Adaptor)
        -------------------------------------------------------------------------- */
     const modalBackdrop = document.getElementById('modal-backdrop');
     const openModalBtns = document.querySelectorAll('.open-modal-btn');
@@ -77,10 +92,31 @@ document.addEventListener('DOMContentLoaded', () => {
         const isHifz = program === 'Hifz-e-Quran Program' || (program && program.toLowerCase().includes('hifz'));
 
         if (modalHeaderTitle) {
-            modalHeaderTitle.textContent = isHifz ? 'Inquire for Hifz-e-Quran' : 'Admissions 2026–27';
+            if (isHifz) {
+                modalHeaderTitle.textContent = 'Inquire for Hifz-e-Quran';
+            } else if (program && program.toLowerCase().includes('middle')) {
+                modalHeaderTitle.textContent = 'Inquire for Middle School (Class 6–8)';
+            } else if (program && program.toLowerCase().includes('matric')) {
+                modalHeaderTitle.textContent = 'Inquire for Matriculation (Class 9–10)';
+            } else if (program && (program.toLowerCase().includes('fsc') || program.toLowerCase().includes('ics') || program.toLowerCase().includes('inter'))) {
+                modalHeaderTitle.textContent = 'Inquire for F.Sc & ICS (11th–12th)';
+            } else {
+                modalHeaderTitle.textContent = 'Admissions 2026–27';
+            }
         }
         if (applyGradeSelect && program) {
-            applyGradeSelect.value = isHifz ? 'Hifz-e-Quran Program' : program;
+            // Find option matching or containing program
+            let matched = false;
+            for (let opt of applyGradeSelect.options) {
+                if (opt.value && (opt.value.toLowerCase() === program.toLowerCase() || opt.value.toLowerCase().includes(program.toLowerCase()))) {
+                    applyGradeSelect.value = opt.value;
+                    matched = true;
+                    break;
+                }
+            }
+            if (!matched && isHifz) {
+                applyGradeSelect.value = 'Hifz-e-Quran Program';
+            }
         }
         if (applyNotesLabel) {
             applyNotesLabel.textContent = isHifz ? 'Current Quran / Nazra Status & Remarks' : 'Previous School / Remarks';
