@@ -2240,3 +2240,263 @@ img { max-width: 100%; height: auto; display: block; }
     color: var(--gold-accent);
 }
 
+/* ==========================================================================
+   Hifz-e-Quran Wing Dedicated Styling
+   ========================================================================== */
+.hifz-hero-card {
+    background: #ffffff;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
+    padding: clamp(1.5rem, 3.5vw, 2.75rem);
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 2.25rem;
+    align-items: center;
+    margin-bottom: 2.25rem;
+}
+
+.hifz-hero-img-wrap {
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 3px solid var(--gold-accent);
+    box-shadow: 0 10px 25px rgba(9, 27, 44, 0.2);
+    height: 100%;
+    min-height: 290px;
+}
+
+.hifz-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hifz-badge-floating {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    background: rgba(15, 41, 66, 0.92);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    border-radius: var(--radius-sm);
+    padding: 0.65rem 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #ffffff;
+}
+
+.hifz-badge-floating strong {
+    font-size: 0.95rem;
+    color: var(--gold-accent);
+    display: block;
+}
+
+.hifz-badge-floating span {
+    font-size: 0.78rem;
+    color: #e2e8f0;
+}
+
+.hifz-pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    margin: 1.75rem 0;
+}
+
+.hifz-pillar-card {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1.65rem 1.35rem;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.hifz-pillar-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--gold-accent);
+    box-shadow: var(--shadow-md);
+}
+
+.hifz-pillar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.85rem;
+}
+
+.hifz-pillar-title {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--navy-primary);
+}
+
+.hifz-arabic-badge {
+    font-family: 'Noto Nastaliq Urdu', serif;
+    font-size: 1.15rem;
+    color: var(--gold-dark);
+    font-weight: 700;
+}
+
+.hifz-pillar-card p {
+    font-size: 0.885rem;
+    color: var(--text-sub);
+    line-height: 1.55;
+    margin: 0;
+}
+
+.hifz-dual-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.75rem;
+    margin: 1.75rem 0;
+}
+
+.hifz-dual-card {
+    background: #ffffff;
+    border-radius: var(--radius-md);
+    padding: 2rem 1.75rem;
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--gold-accent);
+    box-shadow: var(--shadow-sm);
+}
+
+.hifz-dual-card.academic-track {
+    border-top-color: var(--navy-primary);
+}
+
+.hifz-dual-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--navy-primary);
+    margin-bottom: 0.65rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.hifz-dual-card p {
+    font-size: 0.9rem;
+    color: var(--text-sub);
+    line-height: 1.55;
+    margin-bottom: 1rem;
+}
+
+.hifz-dual-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.hifz-dual-list li {
+    font-size: 0.875rem;
+    color: var(--text-main);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.55rem;
+}
+
+.hifz-dual-list li svg {
+    color: var(--gold-dark);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.hifz-schedule-card {
+    background: #ffffff;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    padding: 1.75rem;
+    box-shadow: var(--shadow-sm);
+    margin-top: 1.5rem;
+}
+
+.hifz-routine-row {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid #f1f5f9;
+    align-items: baseline;
+    gap: 1rem;
+}
+
+.hifz-routine-row:last-child {
+    border-bottom: none;
+}
+
+.hifz-routine-time {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--gold-dark);
+    white-space: nowrap;
+}
+
+.hifz-routine-desc strong {
+    font-size: 0.925rem;
+    color: var(--navy-primary);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+.hifz-routine-desc span {
+    font-size: 0.84rem;
+    color: var(--text-sub);
+}
+
+.hifz-inquiry-box {
+    background: linear-gradient(135deg, #0f2942 0%, #091b2c 100%);
+    border-radius: var(--radius-lg);
+    padding: clamp(1.75rem, 3.5vw, 2.75rem);
+    color: #ffffff;
+    box-shadow: var(--shadow-md);
+    margin-top: 2rem;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.hifz-inquiry-box h3 {
+    font-family: var(--font-heading);
+    font-size: 1.55rem;
+    color: #ffffff;
+    margin-bottom: 0.45rem;
+}
+
+.hifz-inquiry-box p {
+    color: #cbd5e1;
+    font-size: 0.925rem;
+    margin-bottom: 1.5rem;
+}
+
+.hifz-inquiry-box .input-group label {
+    color: #f1f5f9;
+}
+
+.hifz-inquiry-box input,
+.hifz-inquiry-box select,
+.hifz-inquiry-box textarea {
+    background: #ffffff;
+    color: #0f172a;
+}
+
+@media (max-width: 992px) {
+    .hifz-hero-card { grid-template-columns: 1fr; }
+    .hifz-pillars-grid { grid-template-columns: repeat(2, 1fr); }
+    .hifz-dual-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+    .hifz-pillars-grid { grid-template-columns: 1fr; }
+    .hifz-routine-row { grid-template-columns: 1fr; gap: 0.25rem; }
+}
+
+

@@ -60,16 +60,64 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* --------------------------------------------------------------------------
-       3. Admission Application Modal Dialog
+       3. Admission Application Modal Dialog (Dynamic Hifz / Academic Adaptor)
        -------------------------------------------------------------------------- */
     const modalBackdrop = document.getElementById('modal-backdrop');
     const openModalBtns = document.querySelectorAll('.open-modal-btn');
     const closeModalBtn = document.getElementById('modal-close-btn');
     const cancelModalBtn = document.getElementById('modal-cancel-btn');
     const admissionForm = document.getElementById('admission-form');
+    const modalHeaderTitle = document.querySelector('#modal-backdrop .modal-header h3');
+    const applyGradeSelect = document.getElementById('apply-grade');
+    const applyNotesLabel = document.querySelector('label[for="apply-notes"]');
+    const applyNotesInput = document.getElementById('apply-notes');
+    const modalSubmitBtn = admissionForm ? admissionForm.querySelector('button[type="submit"]') : null;
 
-    function openModal() {
+    function updateModalFieldsForProgram(program) {
+        const isHifz = program === 'Hifz-e-Quran Program' || (program && program.toLowerCase().includes('hifz'));
+
+        if (modalHeaderTitle) {
+            modalHeaderTitle.textContent = isHifz ? 'Inquire for Hifz-e-Quran' : 'Admissions 2026–27';
+        }
+        if (applyGradeSelect && program) {
+            applyGradeSelect.value = isHifz ? 'Hifz-e-Quran Program' : program;
+        }
+        if (applyNotesLabel) {
+            applyNotesLabel.textContent = isHifz ? 'Current Quran / Nazra Status & Remarks' : 'Previous School / Remarks';
+        }
+        if (applyNotesInput) {
+            applyNotesInput.placeholder = isHifz 
+                ? 'e.g. Nazra completed, number of Paras memorized, child age, or any question...' 
+                : 'Details regarding previous school, grade, or marks...';
+        }
+        if (modalSubmitBtn) {
+            modalSubmitBtn.textContent = isHifz ? 'Submit Hifz Inquiry' : 'Submit Application';
+        }
+    }
+
+    if (applyGradeSelect) {
+        applyGradeSelect.addEventListener('change', () => {
+            updateModalFieldsForProgram(applyGradeSelect.value);
+        });
+    }
+
+    // Dynamic field update for on-page Admissions form if present
+    const admPageProgram = document.getElementById('adm-apply-program');
+    const admPageNotesLabel = document.querySelector('label[for="adm-apply-notes"]');
+    const admPageNotes = document.getElementById('adm-apply-notes');
+    if (admPageProgram && admPageNotesLabel && admPageNotes) {
+        admPageProgram.addEventListener('change', () => {
+            const isHifz = admPageProgram.value === 'Hifz-e-Quran Program';
+            admPageNotesLabel.textContent = isHifz ? 'Current Quran / Nazra Status & Remarks' : 'Previous School / Academic Background';
+            admPageNotes.placeholder = isHifz 
+                ? 'e.g. Nazra completed, number of Paras memorized, child age, or any question...' 
+                : 'Mention previous school, grade, or any specific requirements...';
+        });
+    }
+
+    function openModal(requestedProgram) {
         if (modalBackdrop) {
+            updateModalFieldsForProgram(requestedProgram || (applyGradeSelect ? applyGradeSelect.value : ''));
             modalBackdrop.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
@@ -86,7 +134,8 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
             closeMobileDrawer();
-            openModal();
+            const prog = btn.getAttribute('data-program') || (btn.textContent.toLowerCase().includes('hifz') ? 'Hifz-e-Quran Program' : '');
+            openModal(prog);
         });
     });
 
@@ -111,6 +160,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const studentName = document.getElementById('student-name').value.trim();
             const parentName = document.getElementById('parent-name').value.trim();
             const phone = document.getElementById('apply-phone').value.trim();
+            const program = applyGradeSelect ? applyGradeSelect.value : '';
+            const isHifz = program === 'Hifz-e-Quran Program' || program.toLowerCase().includes('hifz');
 
             if (!studentName || !parentName || !phone) {
                 alert('Please fill out all required fields marked with *');
@@ -123,7 +174,11 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.disabled = true;
 
             setTimeout(() => {
-                alert(`Thank you, ${parentName}! The online admission form for ${studentName} has been received. Our admissions officer will contact you at ${phone}.`);
+                if (isHifz) {
+                    alert(`JazakAllah Khair, ${parentName}! Your Hifz-e-Quran inquiry for ${studentName} has been received. Our Tahfeez desk will contact you at ${phone} to arrange a recitation assessment.`);
+                } else {
+                    alert(`Thank you, ${parentName}! The online admission form for ${studentName} has been received. Our admissions officer will contact you at ${phone}.`);
+                }
                 admissionForm.reset();
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
