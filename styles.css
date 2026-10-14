@@ -886,13 +886,25 @@ img { max-width: 100%; height: auto; display: block; }
     height: 52px;
     background: var(--gold-accent);
     color: #ffffff;
-    font-size: 1.45rem;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 0.85rem;
     box-shadow: 0 6px 16px rgba(212, 175, 55, 0.35);
+}
+
+.f-stat-icon-circle svg {
+    width: 26px;
+    height: 26px;
+    stroke: #091b2c;
+    stroke-width: 2.2;
+    fill: none;
+    transition: transform 0.3s ease;
+}
+
+.f-stat-item:hover .f-stat-icon-circle svg {
+    transform: scale(1.12);
 }
 
 .f-stat-num-box {
@@ -1044,15 +1056,35 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .p-icon {
-    font-size: 1.85rem;
     width: 48px;
     height: 48px;
-    background: var(--sand-light);
+    background: rgba(212, 175, 55, 0.12);
+    border: 1px solid rgba(212, 175, 55, 0.25);
     border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    transition: var(--transition);
+}
+
+.portal-card:hover .p-icon {
+    background: var(--navy-primary);
+    border-color: var(--gold-accent);
+}
+
+.p-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--gold-dark);
+    stroke-width: 2;
+    fill: none;
+    transition: var(--transition);
+}
+
+.portal-card:hover .p-icon svg {
+    stroke: var(--gold-accent);
+    transform: scale(1.1);
 }
 
 .p-info strong {
@@ -1160,9 +1192,73 @@ img { max-width: 100%; height: auto; display: block; }
 
 .core-values-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.25rem;
-    margin: 1.75rem 0;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.val-card {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1.15rem;
+    background: #ffffff;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.val-card:hover {
+    border-color: var(--gold-accent);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.val-card h4 {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--navy-primary);
+    margin-bottom: 0.25rem;
+}
+
+.val-card p {
+    font-size: 0.875rem;
+    color: var(--text-sub);
+    margin: 0;
+}
+
+.val-icon-box {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-md);
+    background: rgba(212, 175, 55, 0.12);
+    border: 1px solid rgba(212, 175, 55, 0.28);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: var(--transition);
+}
+
+.val-icon-box svg {
+    width: 22px;
+    height: 22px;
+    stroke: var(--gold-dark);
+    stroke-width: 2;
+    fill: none;
+    transition: var(--transition);
+}
+
+.val-card:hover .val-icon-box {
+    background: var(--navy-primary);
+    border-color: var(--gold-accent);
+}
+
+.val-card:hover .val-icon-box svg {
+    stroke: var(--gold-accent);
+    transform: scale(1.1);
 }
 
 .value-box {
@@ -1298,16 +1394,36 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .why-icon-box {
-    font-size: 2.2rem;
     width: 58px;
     height: 58px;
-    background: var(--sand-light);
-    border: 1px solid rgba(212, 163, 115, 0.4);
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.14) 0%, rgba(212, 175, 55, 0.05) 100%);
+    border: 1px solid rgba(212, 175, 55, 0.35);
     border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 1.25rem;
+    transition: var(--transition);
+}
+
+.why-feature-card:hover .why-icon-box {
+    background: var(--navy-primary);
+    border-color: var(--gold-accent);
+    box-shadow: 0 8px 18px rgba(15, 41, 66, 0.2);
+}
+
+.why-icon-box svg {
+    width: 28px;
+    height: 28px;
+    stroke: var(--gold-dark);
+    stroke-width: 2;
+    fill: none;
+    transition: var(--transition);
+}
+
+.why-feature-card:hover .why-icon-box svg {
+    stroke: var(--gold-accent);
+    transform: scale(1.1);
 }
 
 .why-feature-card h3 {
@@ -1499,7 +1615,25 @@ img { max-width: 100%; height: auto; display: block; }
     margin-bottom: 0.75rem;
 }
 
-.fac-icon-emoji { font-size: 1.5rem; }
+.fac-icon-emoji {
+    width: 32px;
+    height: 32px;
+    background: rgba(212, 175, 55, 0.12);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.fac-icon-emoji svg {
+    width: 18px;
+    height: 18px;
+    stroke: var(--gold-dark);
+    stroke-width: 2;
+    fill: none;
+}
 .fac-cat { font-size: 0.75rem; font-weight: 800; color: var(--gold-dark); text-transform: uppercase; letter-spacing: 0.05em; }
 
 .fac-card h3 {
@@ -1761,7 +1895,37 @@ img { max-width: 100%; height: auto; display: block; }
 .c-info-group { display: flex; flex-direction: column; gap: 1.25rem; }
 
 .c-info-row { display: flex; gap: 0.85rem; align-items: flex-start; }
-.c-icon-badge { font-size: 1.25rem; flex-shrink: 0; }
+.c-icon-badge {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-md);
+    background: rgba(212, 175, 55, 0.12);
+    border: 1px solid rgba(212, 175, 55, 0.28);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: var(--transition);
+}
+
+.c-icon-badge svg {
+    width: 20px;
+    height: 20px;
+    stroke: var(--gold-dark);
+    stroke-width: 2;
+    fill: none;
+    transition: var(--transition);
+}
+
+.c-info-row:hover .c-icon-badge {
+    background: var(--navy-primary);
+    border-color: var(--gold-accent);
+}
+
+.c-info-row:hover .c-icon-badge svg {
+    stroke: var(--gold-accent);
+    transform: scale(1.1);
+}
 
 .c-info-row strong { display: block; font-size: 0.9rem; color: var(--mocha-primary); }
 .c-info-row p { font-size: 0.875rem; color: var(--text-sub); margin: 0; }
@@ -2053,3 +2217,26 @@ img { max-width: 100%; height: auto; display: block; }
     .modal-footer { flex-direction: column-reverse; gap: 0.65rem; }
     .modal-footer .btn { width: 100%; }
 }
+
+/* WordPress-Style Vector SVG Utilities */
+.wp-icon {
+    display: inline-block;
+    vertical-align: middle;
+    flex-shrink: 0;
+}
+
+.btn-icon-svg {
+    display: inline-block;
+    vertical-align: -2.5px;
+    margin-right: 0.45rem;
+    flex-shrink: 0;
+}
+
+.addr-icon-svg {
+    display: inline-block;
+    vertical-align: -2.5px;
+    margin-right: 0.4rem;
+    flex-shrink: 0;
+    color: var(--gold-accent);
+}
+
