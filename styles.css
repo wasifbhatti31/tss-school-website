@@ -1,11 +1,31 @@
 /* ==========================================================================
    TSS - Lahore
    Theme: Royal Navy & Warm Gold (Ivy League / Oxford Academic Prestige)
-   Colors: Deep Navy Blue (#0F2942), Warm Gold (#D4AF37), Alabaster White (#F8F9FA)
-   Headings: Classic Serif (Lora / Merriweather)
-   Body: Clean Sans-Serif (Open Sans)
-   Watermark: Faint Geometric Pattern
+   Urdu Font: Jameel Noori Nastaleeq
    ========================================================================== */
+
+/* Jameel Noori Nastaleeq Web Font Definition */
+@font-face {
+    font-family: 'Jameel Noori Nastaleeq';
+    src: local('Jameel Noori Nastaleeq'),
+         local('JameelNooriNastaleeq'),
+         local('JameelNooriNastaliq'),
+         url('https://cdn.jsdelivr.net/npm/jameel-noori/fonts/jameel-noori-nastaleeq4.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'JameelNooriNastaliq';
+    src: local('Jameel Noori Nastaleeq'),
+         local('JameelNooriNastaleeq'),
+         local('JameelNooriNastaliq'),
+         url('https://cdn.jsdelivr.net/npm/jameel-noori/fonts/jameel-noori-nastaleeq4.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
 
 :root {
     /* Primary (Headers & Footer): Deep Royal Navy */
@@ -58,7 +78,7 @@
     --font-heading: 'Lora', 'Merriweather', Georgia, serif;
     --font-body: 'Open Sans', system-ui, -apple-system, sans-serif;
     --font-main: 'Open Sans', system-ui, -apple-system, sans-serif;
-    --font-urdu: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Urdu Typesetting', Tahoma, serif;
+    --font-urdu: 'Jameel Noori Nastaleeq', 'JameelNooriNastaliq', 'Noto Nastaliq Urdu', 'Urdu Typesetting', serif;
 
     /* Faint 4% Opacity Geometric Pattern Watermark in Navy */
     --pattern-geometric: url("data:image/svg+xml,%3Csvg width='70' height='70' viewBox='0 0 70 70' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%230F2942' stroke-width='0.75' stroke-opacity='0.04'%3E%3Cpath d='M35 0 L35 70 M0 35 L70 35 M0 0 L70 70 M0 70 L70 0'/%3E%3Cpolygon points='35,14 49,21 56,35 49,49 35,56 21,49 14,35 21,21'/%3E%3Cpolygon points='35,21 44,25 49,35 44,45 35,49 26,45 21,35 26,25'/%3E%3C/g%3E%3C/svg%3E");
@@ -2742,5 +2762,307 @@ img { max-width: 100%; height: auto; display: block; }
     .hifz-pillars-grid { grid-template-columns: 1fr; }
     .hifz-routine-row { grid-template-columns: 1fr; gap: 0.25rem; }
 }
+
+/* ==========================================================================
+   BILINGUAL (URDU & ENGLISH) STYLES & JAMEEL NOORI NASTALEEQ TYPOGRAPHY
+   ========================================================================== */
+
+/* Language Switcher Buttons */
+.lang-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 15px;
+    background: rgba(212, 175, 55, 0.12);
+    border: 1.5px solid var(--gold-accent);
+    color: var(--gold-accent);
+    border-radius: 50px;
+    font-family: var(--font-urdu);
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+    text-decoration: none;
+    line-height: 1.2;
+}
+
+.lang-toggle-btn:hover {
+    background: var(--gold-accent);
+    color: var(--navy-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(212, 175, 55, 0.35);
+}
+
+.lang-toggle-btn .lang-icon {
+    font-size: 15px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.lang-toggle-btn .lang-label {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 700;
+}
+
+/* Mobile Drawer Language Button */
+.drawer-lang-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 11px 16px;
+    background: rgba(212, 175, 55, 0.15);
+    border: 1.5px solid var(--gold-accent);
+    color: var(--gold-accent);
+    border-radius: 8px;
+    font-family: var(--font-urdu);
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.drawer-lang-btn:hover {
+    background: var(--gold-accent);
+    color: var(--navy-dark);
+}
+
+/* --------------------------------------------------------------------------
+   Urdu RTL & Jameel Noori Nastaleeq Mode
+   -------------------------------------------------------------------------- */
+html[lang="ur"],
+body.lang-ur,
+.translated-rtl,
+body.translated-rtl {
+    direction: rtl !important;
+    text-align: right !important;
+    font-family: var(--font-urdu) !important;
+}
+
+body.lang-ur *,
+.translated-rtl *,
+html[lang="ur"] * {
+    font-family: var(--font-urdu) !important;
+}
+
+body.lang-ur h1,
+body.lang-ur h2,
+body.lang-ur h3,
+body.lang-ur h4,
+.translated-rtl h1,
+.translated-rtl h2,
+.translated-rtl h3,
+.translated-rtl h4 {
+    line-height: 1.85 !important;
+    letter-spacing: normal !important;
+    font-weight: 700;
+}
+
+body.lang-ur p,
+body.lang-ur li,
+body.lang-ur span,
+body.lang-ur a,
+body.lang-ur label,
+.translated-rtl p,
+.translated-rtl li,
+.translated-rtl span,
+.translated-rtl a,
+.translated-rtl label {
+    line-height: 2.1 !important;
+    font-size: 1.05em;
+}
+
+/* RTL layout adjustments */
+body.lang-ur .top-bar-flex,
+.translated-rtl .top-bar-flex {
+    flex-direction: row-reverse;
+}
+
+body.lang-ur .top-ticker,
+body.lang-ur .top-contacts,
+.translated-rtl .top-ticker,
+.translated-rtl .top-contacts {
+    direction: rtl;
+}
+
+body.lang-ur .top-address svg,
+body.lang-ur .top-link svg,
+body.lang-ur .f-contact-item svg,
+body.lang-ur .c-info-row svg,
+.translated-rtl .top-address svg,
+.translated-rtl .top-link svg,
+.translated-rtl .f-contact-item svg,
+.translated-rtl .c-info-row svg {
+    margin-right: 0 !important;
+    margin-left: 8px !important;
+}
+
+body.lang-ur .nav-links,
+.translated-rtl .nav-links {
+    flex-direction: row-reverse;
+}
+
+body.lang-ur .dropdown-menu,
+.translated-rtl .dropdown-menu {
+    left: auto !important;
+    right: 0 !important;
+    text-align: right;
+}
+
+body.lang-ur .dropdown-chevron,
+.translated-rtl .dropdown-chevron {
+    margin-left: 0;
+    margin-right: 6px;
+}
+
+body.lang-ur .hero-button-group,
+.translated-rtl .hero-button-group {
+    flex-direction: row-reverse;
+}
+
+body.lang-ur .f-stat-item,
+.translated-rtl .f-stat-item {
+    text-align: right;
+}
+
+body.lang-ur .f-stat-num-box,
+body.lang-ur .stat-number,
+body.lang-ur .f-stat-suffix,
+.translated-rtl .f-stat-num-box,
+.translated-rtl .stat-number,
+.translated-rtl .f-stat-suffix {
+    direction: ltr;
+    display: inline-block;
+}
+
+body.lang-ur .mobile-drawer,
+.translated-rtl .mobile-drawer {
+    left: auto;
+    right: 0;
+    transform: translateX(100%);
+    text-align: right;
+}
+
+body.lang-ur .mobile-drawer.active,
+.translated-rtl .mobile-drawer.active {
+    transform: translateX(0);
+}
+
+body.lang-ur .drawer-top,
+body.lang-ur .drawer-dropdown-header,
+body.lang-ur .breadcrumb-nav,
+.translated-rtl .drawer-top,
+.translated-rtl .drawer-dropdown-header,
+.translated-rtl .breadcrumb-nav {
+    flex-direction: row-reverse;
+}
+
+body.lang-ur .drawer-menu a,
+body.lang-ur .drawer-submenu a,
+.translated-rtl .drawer-menu a,
+.translated-rtl .drawer-submenu a {
+    text-align: right;
+}
+
+body.lang-ur .breadcrumb-nav .sep,
+.translated-rtl .breadcrumb-nav .sep {
+    transform: rotate(180deg);
+    display: inline-block;
+}
+
+body.lang-ur .footer-4grid,
+.translated-rtl .footer-4grid {
+    direction: rtl;
+    text-align: right;
+}
+
+body.lang-ur .f-col h4::after,
+.translated-rtl .f-col h4::after {
+    left: auto;
+    right: 0;
+}
+
+body.lang-ur .f-links li a,
+.translated-rtl .f-links li a {
+    padding-left: 0;
+    padding-right: 12px;
+}
+
+body.lang-ur .f-links li a::before,
+.translated-rtl .f-links li a::before {
+    left: auto;
+    right: 0;
+    content: "‹";
+}
+
+body.lang-ur .f-contact-item,
+.translated-rtl .f-contact-item {
+    direction: ltr;
+    justify-content: flex-end;
+}
+
+body.lang-ur .c-info-row,
+.translated-rtl .c-info-row {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+body.lang-ur .input-group input,
+body.lang-ur .input-group textarea,
+body.lang-ur .input-group select,
+.translated-rtl .input-group input,
+.translated-rtl .input-group textarea,
+.translated-rtl .input-group select {
+    text-align: right;
+    direction: rtl;
+}
+
+body.lang-ur .modal-header,
+body.lang-ur .modal-footer,
+.translated-rtl .modal-header,
+.translated-rtl .modal-footer {
+    flex-direction: row-reverse;
+}
+
+body.lang-ur .prog-card-list li,
+.translated-rtl .prog-card-list li {
+    padding-left: 0;
+    padding-right: 24px;
+}
+
+body.lang-ur .prog-card-list li::before,
+.translated-rtl .prog-card-list li::before {
+    left: auto;
+    right: 0;
+}
+
+body.lang-ur .btn svg,
+.translated-rtl .btn svg {
+    margin-left: 0;
+    margin-right: 8px;
+}
+
+/* Hide Google Translate UI artifacts */
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame,
+iframe.goog-te-banner-frame,
+#goog-gt-tt {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+body {
+    top: 0px !important;
+}
+
+.goog-text-highlight {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
 
 

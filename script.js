@@ -90,18 +90,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateModalFieldsForProgram(program) {
         const isHifz = program === 'Hifz-e-Quran Program' || (program && program.toLowerCase().includes('hifz'));
+        const isUr = (localStorage.getItem('tss_lang') === 'ur') || document.body.classList.contains('lang-ur');
 
         if (modalHeaderTitle) {
             if (isHifz) {
-                modalHeaderTitle.textContent = 'Inquire for Hifz-e-Quran';
+                modalHeaderTitle.textContent = isUr ? 'شعبہ حفظِ قرآن داخلہ معلومات' : 'Inquire for Hifz-e-Quran';
             } else if (program && program.toLowerCase().includes('middle')) {
-                modalHeaderTitle.textContent = 'Inquire for Middle School (Class 6–8)';
+                modalHeaderTitle.textContent = isUr ? 'مڈل اسکول (کلاس 6–8) داخلہ معلومات' : 'Inquire for Middle School (Class 6–8)';
             } else if (program && program.toLowerCase().includes('matric')) {
-                modalHeaderTitle.textContent = 'Inquire for Matriculation (Class 9–10)';
+                modalHeaderTitle.textContent = isUr ? 'میٹرک (کلاس 9–10) داخلہ معلومات' : 'Inquire for Matriculation (Class 9–10)';
             } else if (program && (program.toLowerCase().includes('fsc') || program.toLowerCase().includes('ics') || program.toLowerCase().includes('inter'))) {
-                modalHeaderTitle.textContent = 'Inquire for F.Sc & ICS (11th–12th)';
+                modalHeaderTitle.textContent = isUr ? 'ایف ایس سی اور آئی سی ایس داخلہ معلومات' : 'Inquire for F.Sc & ICS (11th–12th)';
             } else {
-                modalHeaderTitle.textContent = 'Admissions 2026–27';
+                modalHeaderTitle.textContent = isUr ? 'داخلے 2026–27' : 'Admissions 2026–27';
             }
         }
         if (applyGradeSelect && program) {
@@ -119,15 +120,29 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         if (applyNotesLabel) {
-            applyNotesLabel.textContent = isHifz ? 'Current Quran / Nazra Status & Remarks' : 'Previous School / Remarks';
+            if (isUr) {
+                applyNotesLabel.textContent = isHifz ? 'قرآن پاک / ناظرہ کی موجودہ حالت اور تفصیلات' : 'سابقہ اسکول یا اضافی تفصیلات';
+            } else {
+                applyNotesLabel.textContent = isHifz ? 'Current Quran / Nazra Status & Remarks' : 'Previous School / Remarks';
+            }
         }
         if (applyNotesInput) {
-            applyNotesInput.placeholder = isHifz 
-                ? 'e.g. Nazra completed, number of Paras memorized, child age, or any question...' 
-                : 'Details regarding previous school, grade, or marks...';
+            if (isUr) {
+                applyNotesInput.placeholder = isHifz 
+                    ? 'مثلاً ناظرہ مکمل ہے، یاد کردہ پاروں کی تعداد، بچے کی عمر وغیرہ...' 
+                    : 'سابقہ اسکول، گریڈ یا حاصل کردہ نمبرات کی تفصیلات...';
+            } else {
+                applyNotesInput.placeholder = isHifz 
+                    ? 'e.g. Nazra completed, number of Paras memorized, child age, or any question...' 
+                    : 'Details regarding previous school, grade, or marks...';
+            }
         }
         if (modalSubmitBtn) {
-            modalSubmitBtn.textContent = isHifz ? 'Submit Hifz Inquiry' : 'Submit Application';
+            if (isUr) {
+                modalSubmitBtn.textContent = isHifz ? 'حفظِ قرآن کی درخواست جمع کروائیں' : 'درخواست جمع کروائیں';
+            } else {
+                modalSubmitBtn.textContent = isHifz ? 'Submit Hifz Inquiry' : 'Submit Application';
+            }
         }
     }
 
