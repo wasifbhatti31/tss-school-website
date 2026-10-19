@@ -42,7 +42,9 @@
         // Hero Section
         "BISE Lahore Affiliated Institution": "لاہور بورڈ (BISE) سے الحاق شدہ ادارہ",
         "NURTURING ACADEMIC EXCELLENCE": "اعلیٰ تعلیمی معیار اور روشن مستقبل کی ضمانت",
-        "ACADEMIC EXCELLENCE": "اعلیٰ تعلیمی معیار اور روشن مستقبل",
+        "NURTURING": "اعلیٰ تعلیمی معیار اور",
+        "NURTURING ": "اعلیٰ تعلیمی معیار اور",
+        "ACADEMIC EXCELLENCE": "روشن مستقبل کی ضمانت",
         "Shaping Futures, Inspiring Leaders. Welcome to TSS School.": "مستقبل کے معمار اور باصلاحیت لیڈرز کی تعمیر۔ ٹی ایس ایس اسکول میں خوش آمدید۔",
         "Welcome to TSS, Lahore. Offering integrated Tahfeez-ul-Quran, Middle School (Class 6th–8th), and Board-focused Matriculation & F.Sc / ICS preparation at Chuburji Park, Lahore.": "ٹی ایس ایس لاہور میں خوش آمدید۔ چوبرجی پارک کی پُرسکون فضا میں معیاری حفظِ قرآن، مڈل اسکول (کلاس 6 تا 8)، اور میٹرک و ایف ایس سی / آئی سی ایس کی شاندار تعلیم۔",
         "Discover TSS": "ٹی ایس ایس کو جانیے",
@@ -384,10 +386,19 @@
                     const lead = node.nodeValue.match(/^\s*/)[0];
                     const trail = node.nodeValue.match(/\s*$/)[0];
                     node.nodeValue = lead + matchedUrdu + trail;
+
+                    if (node.parentElement) {
+                        node.parentElement.classList.add('notranslate');
+                        node.parentElement.setAttribute('translate', 'no');
+                    }
                 }
             } else {
                 if (typeof node._origEnText !== 'undefined') {
                     node.nodeValue = node._origEnText;
+                    if (node.parentElement) {
+                        node.parentElement.classList.remove('notranslate');
+                        node.parentElement.removeAttribute('translate');
+                    }
                 }
             }
         });
@@ -409,6 +420,64 @@
         });
     }
 
+    function injectAntiHighlightRules() {
+        if (!document.getElementById('tss-anti-goog-highlight')) {
+            const style = document.createElement('style');
+            style.id = 'tss-anti-goog-highlight';
+            style.textContent = `
+                html body .goog-text-highlight,
+                html body font.goog-text-highlight,
+                html body .goog-text-highlight:hover,
+                html body font.goog-text-highlight:hover,
+                html body .goog-text-highlight:focus,
+                html body .goog-text-highlight:active,
+                body.lang-ur .goog-text-highlight,
+                body.lang-ur .goog-text-highlight:hover,
+                body.lang-ur font,
+                body.lang-ur font:hover,
+                .goog-text-highlight,
+                .goog-text-highlight:hover,
+                font[style] {
+                    background: transparent !important;
+                    background-color: transparent !important;
+                    box-shadow: none !important;
+                    border: none !important;
+                    outline: none !important;
+                    text-shadow: none !important;
+                }
+                #goog-gt-tt,
+                #goog-gt-tt *,
+                .goog-te-balloon-frame,
+                .goog-tooltip,
+                .goog-tooltip:hover,
+                .goog-te-banner-frame,
+                .VIpgJd-yAWneB-L7tKAc,
+                .VIpgJd-ZVi9C-aZ2wEe-wOHMyf,
+                .VIpgJd-ZVi9C-x3Du2 {
+                    display: none !important;
+                    visibility: hidden !important;
+                    opacity: 0 !important;
+                    pointer-events: none !important;
+                }
+            `;
+            document.head.appendChild(style);
+        }
+
+        // Suppress mouseover hover boxes dynamically
+        document.addEventListener('mouseover', function (e) {
+            const el = e.target;
+            if (el) {
+                if (el.classList && el.classList.contains('goog-text-highlight')) {
+                    el.classList.remove('goog-text-highlight');
+                }
+                if (el.tagName && el.tagName.toLowerCase() === 'font') {
+                    el.style.backgroundColor = 'transparent';
+                    el.style.boxShadow = 'none';
+                }
+            }
+        }, true);
+    }
+
     function setupEventListeners() {
         const btns = document.querySelectorAll('#lang-toggle-btn, .lang-toggle-btn, #drawer-lang-btn, .drawer-lang-btn');
         btns.forEach(btn => {
@@ -421,6 +490,7 @@
     }
 
     function init() {
+        injectAntiHighlightRules();
         initGoogleTranslate();
 
         const saved = localStorage.getItem('tss_lang');
