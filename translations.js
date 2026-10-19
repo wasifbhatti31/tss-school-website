@@ -135,25 +135,49 @@
         "Explore Hifz Wing": "حفظِ قرآن شعبہ کی تفصیلات",
         "View All Academic Programs →": "تمام تعلیمی پروگرامز دیکھیں ←",
 
-        // Facilities & Gallery
+        // Facilities & Gallery (All Cards, Badges & Overlays)
         "Campus Infrastructure": "کیمپس سہولیات",
         "World-Class Facilities": "جدید ترین انفراسٹرکچر",
         "Providing students with practical science labs, modern IT infrastructure, and a secure learning environment.": "طلباء کو عملی سائنس لیبز، جدید آئی ٹی انفراسٹرکچر اور پُرامن تعلیمی ماحول کی فراہمی۔",
+        "Academics": "تعلیمی شعبہ",
+        "Technology": "ٹیکنالوجی",
+        "Tahfeez": "تحفیظ القرآن",
+        "Resources": "وسائل و کتب",
+        "Campus": "کیمپس",
+        "Campus Life": "کیمپس سرگرمیاں",
         "Science Laboratories": "سائنسی تجربہ گاہیں (سائنس لیبز)",
+        "Hands-on experimental learning in Physics, Chemistry & Biology": "فزکس، کیمسٹری اور بائیولوجی کے عملی تجربات کی جدید ترین سہولت",
+        "Hands-on experimental learning in Physics, Chemistry &amp; Biology": "فزکس، کیمسٹری اور بائیولوجی کے عملی تجربات کی جدید ترین سہولت",
         "Equipped Physics, Chemistry, and Biology practical labs for hands-on experiment sessions required for Board exams.": "بورڈ امتحانات کے پریکٹیکل کی تیاری کے لیے فزکس، کیمسٹری اور بائیولوجی کی مکمل لیبز۔",
+        "Modern Computer Lab": "جدید کمپیوٹر لیب",
         "Computer Lab": "جدید کمپیوٹر لیب",
+        "High-speed digital workstation for ICS and IT coursework": "آئی سی ایس اور آئی ٹی کورسز کے لیے جدید ڈیجیٹل ورک اسٹیشنز",
         "Modern computer systems with high-speed internet for ICS computer science students and IT coursework.": "آئی سی ایس طلباء اور آئی ٹی کورسز کے لیے جدید کمپیوٹر سسٹمز مع تیز رفتار انٹرنیٹ۔",
+        "Tahfeez-ul-Quran Hall": "خصوصی تحفیظ القرآن ہال",
+        "Peaceful spiritual atmosphere for Quran memorization and Tajweed": "حفظِ قرآن اور تجوید کے لیے پرسکون اور روحانی ماحول",
+        "Academic Library": "اکیڈمک لائبریری",
         "School Library": "اسکول لائبریری",
+        "Comprehensive collection of reference books and quiet study corners": "درسی و حوالہ جاتی کتب کا وسیع ذخیرہ اور پرسکون مطالعہ گاہ",
         "Quiet study reading room with academic textbooks, reference guides, Islamic literature, and exam past papers.": "درسی کتب، حوالہ جاتی کتب، اسلامی لٹریچر اور ماضی کے امتحانی پرچوں سے آراستہ پُرسکون اسٹڈی روم۔",
+        "Interactive Classrooms": "انٹرایکٹو اور جدید کلاس رومز",
+        "Spacious, well-ventilated rooms with focused student-teacher engagement": "روشن، ہوا دار اور پرسکون کمرہ جماعت جہاں اساتذہ کی بھرپور توجہ میسر ہے",
+        "Orientation & Seminar Hall": "اورینٹیشن اور سمینار ہال",
+        "Orientation &amp; Seminar Hall": "اورینٹیشن اور سمینار ہال",
+        "Modern acoustic auditorium for academic lectures, seminars and student orientation": "اکیڈمک لیکچرز اور سمینارز کے لیے جدید آڈیٹوریم ہال",
         "CCTV Monitored Campus": "سی سی ٹی وی مانیٹرڈ کیمپس",
         "Secure campus premises with CCTV surveillance, disciplined atmosphere, and attentive administrative staff.": "سی سی ٹی وی کیمروں، باوقار ماحول اور مستعد عملے کے ساتھ محفوظ کیمپس۔",
-        "Tahfeez-ul-Quran Hall": "خصوصی تحفیظ القرآن ہال",
-        "Orientation & Seminar Hall": "اورینٹیشن اور سمینار ہال",
-        "Modern acoustic auditorium for academic lectures, seminars and student orientation": "اکیڈمک لیکچرز اور سمینارز کے لیے جدید آڈیٹوریم ہال",
+        "Campus Life & Highlights": "کیمپس کی زندگی اور اہم جھلکیاں",
+        "Campus Life &amp; Highlights": "کیمپس کی زندگی اور اہم جھلکیاں",
+        "A glimpse into our classrooms, laboratories, spiritual activities, and learning environment at TSS, Lahore.": "ٹی ایس ایس لاہور کے کلاس رومز، تجربہ گاہوں، روحانی سرگرمیوں اور تعلیمی ماحول کا ایک خوبصورت منظر۔",
+        "TSS Campus Facilities & Environments": "ٹی ایس ایس کیمپس سہولیات و ماحول",
+        "TSS Campus Facilities &amp; Environments": "ٹی ایس ایس کیمپس سہولیات و ماحول",
+        "A photographic tour through our purpose-built learning spaces and facilities designed for academic excellence.": "اعلیٰ تعلیمی معیار کے لیے تیار کردہ ہمارے کیمپس اور جدید تعلیمی سہولیات کا تصویری دورہ۔",
         "View Complete Campus Gallery →": "کیمپس کی مکمل گیلری دیکھیں ←",
+        "View Complete Campus Gallery &rarr;": "کیمپس کی مکمل گیلری دیکھیں ←",
         "Book Campus Visit": "کیمپس وزٹ بک کریں",
         "Schedule a Campus Tour at TSS Lahore": "ٹی ایس ایس لاہور کے کیمپس وزٹ کا شیڈول طے کریں",
         "Visit our campus in person at Chuburji Park, Old Rifle Range Road, Lahore. Our administration will be delighted to guide you through our facilities.": "چوبرجی پارک، اولڈ رائفل رینج روڈ، لاہور میں ہمارے کیمپس تشریف لائیں۔ ہماری انتظامیہ آپ کو تمام سہولیات دکھانے پر خوش ہوگی۔",
+        "Apply for Admission 2026": "داخلہ 2026 کے لیے درخواست دیں",
 
         // Modal & Form
         "Student Full Name *": "طالب علم کا مکمل نام *",
@@ -172,14 +196,49 @@
         "Current Quran / Nazra Status & Remarks": "قرآن پاک / ناظرہ کی موجودہ حالت اور تفصیلات",
         "Submit Hifz Inquiry": "حفظِ قرآن کی درخواست جمع کروائیں",
 
-        // Footer & Copyright
-        "Pages": "اہم لنکس",
+        // Admissions Guidelines Steps & Info
+        "Simple 3-Step Process": "آسان 3 مراحل پر مشتمل داخلہ پروسیس",
+        "Admission Guidelines 2026–27": "داخلہ کے رہنما اصول برائے 2026–27",
+        "Follow these simple steps to secure admission at TSS, Lahore.": "ٹی ایس ایس لاہور میں داخلہ کے لیے ان آسان مراحل پر عمل کریں۔",
+        "Form Submission": "فارم جمع کروانا",
+        "Fill the online form or collect prospectus from Chuburji Park campus.": "آن لائن فارم پُر کریں یا چوبرجی پارک کیمپس سے پراسپیکٹس حاصل کریں۔",
+        "Assessment Test": "اسیسمنٹ ٹیسٹ",
+        "Informal academic evaluation or Hifz test at campus office.": "کیمپس آفس میں بنیادی تعلیمی جائزہ یا حفظ کا ٹیسٹ۔",
+        "Enrollment": "داخلہ فائنل اور تصدیق",
+        "Verification of documents, fee deposit, and student roll number allotment.": "کاغذات کی جانچ پڑتال، فیس جمع اور طالب علم کو رول نمبر الاٹ کیا جانا۔",
+        "Have Admission Questions?": "داخلہ کے متعلق کوئی سوال ہے؟",
+        "Contact our helpline or send a WhatsApp message to get instant guidance.": "ہماری ہیلپ لائن پر رابطہ کریں یا فوری رہنمائی کے لیے واٹس ایپ میسج کریں۔",
+        "WhatsApp Inquiry": "واٹس ایپ پر رابطہ کریں",
+        "Call: 0328 4877877": "کال کریں: 0328 4877877",
+
+        // Footer & Additional Global Links
+        "Pages": "اہم صفحات",
         "Programs": "تعلیمی پروگرامز",
-        "Providing high quality education, Hifz-e-Quran, and character building in Chuburji Park, Lahore.": "چوبرجی پارک، لاہور میں اعلیٰ معیاری عصری تعلیم، حفظِ قرآن اور باکردار تربیت۔",
+        "Campus Address": "کیمپس کا پتہ",
+        "Office Hours:": "دفتری اوقات:",
+        "Mon – Sat: 8:00 AM – 2:30 PM": "پیر تا ہفتہ: صبح 8:00 بجے تا دوپہر 2:30 بجے",
+        "Providing high quality education, Hifz-e-Quran, and character building in Chuburji Park, Lahore.": "چوبرجی پارک لاہور میں معیاری تعلیم، حفظِ قرآن اور کردار سازی کا معتبر ادارہ۔",
+        "All Rights Reserved.": "جملہ حقوق محفوظ ہیں۔",
+        "© 2026 TSS. All Rights Reserved.": "© 2026 ٹی ایس ایس اسکول۔ جملہ حقوق محفوظ ہیں۔",
+        "2026 TSS. All Rights Reserved.": "2026 ٹی ایس ایس اسکول۔ جملہ حقوق محفوظ ہیں۔",
+        "View Full Admission Process & Form →": "مکمل داخلہ طریقہ کار اور فارم دیکھیں ←",
+        "View Full Admission Process &amp; Form &rarr;": "مکمل داخلہ طریقہ کار اور فارم دیکھیں ←",
         "Matric Science & Computer": "میٹرک سائنس و کمپیوٹر",
-        "All Rights Reserved.": "تمام حقوق محفوظ ہیں۔",
-        "© 2026 TSS. All Rights Reserved.": "© 2026 ٹی ایس ایس لاہور۔ تمام حقوق محفوظ ہیں۔"
+        "Matric Science &amp; Computer": "میٹرک سائنس و کمپیوٹر"
     };
+
+    // Build Case-Insensitive & Normalized Lookup Map
+    const DICTIONARY_LOWER = {};
+    for (const key in DICTIONARY) {
+        const val = DICTIONARY[key];
+        DICTIONARY_LOWER[key.toLowerCase().trim()] = val;
+        const amp = key.replace(/&amp;/g, '&');
+        DICTIONARY_LOWER[amp.toLowerCase().trim()] = val;
+        const clean = key.replace(/\s+/g, ' ');
+        DICTIONARY_LOWER[clean.toLowerCase().trim()] = val;
+        const cleanAmp = clean.replace(/&amp;/g, '&');
+        DICTIONARY_LOWER[cleanAmp.toLowerCase().trim()] = val;
+    }
 
     // Input Placeholders
     const PLACEHOLDERS = {
@@ -306,13 +365,25 @@
         nodes.forEach(node => {
             const raw = node.nodeValue.trim();
             if (lang === 'ur') {
-                if (DICTIONARY[raw]) {
+                const rawClean = raw.replace(/\s+/g, ' ');
+                const rawAmp = raw.replace(/&amp;/g, '&');
+                const rawCleanAmp = rawClean.replace(/&amp;/g, '&');
+                const matchedUrdu = DICTIONARY[raw]
+                    || DICTIONARY[rawClean]
+                    || DICTIONARY[rawAmp]
+                    || DICTIONARY[rawCleanAmp]
+                    || DICTIONARY_LOWER[raw.toLowerCase()]
+                    || DICTIONARY_LOWER[rawClean.toLowerCase()]
+                    || DICTIONARY_LOWER[rawAmp.toLowerCase()]
+                    || DICTIONARY_LOWER[rawCleanAmp.toLowerCase()];
+
+                if (matchedUrdu) {
                     if (typeof node._origEnText === 'undefined') {
                         node._origEnText = node.nodeValue;
                     }
                     const lead = node.nodeValue.match(/^\s*/)[0];
                     const trail = node.nodeValue.match(/\s*$/)[0];
-                    node.nodeValue = lead + DICTIONARY[raw] + trail;
+                    node.nodeValue = lead + matchedUrdu + trail;
                 }
             } else {
                 if (typeof node._origEnText !== 'undefined') {

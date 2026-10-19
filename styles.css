@@ -3046,6 +3046,19 @@ body.lang-ur .btn svg,
     margin-right: 8px;
 }
 
+body.lang-ur .g-tag,
+.translated-rtl .g-tag {
+    letter-spacing: normal !important;
+    text-transform: none !important;
+    font-size: 0.85rem !important;
+}
+
+body.lang-ur .g-overlay,
+.translated-rtl .g-overlay {
+    text-align: right;
+    direction: rtl;
+}
+
 /* Hide Google Translate UI artifacts */
 .goog-te-banner-frame.skiptranslate,
 .goog-te-banner-frame,
